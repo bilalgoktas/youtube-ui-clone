@@ -1,0 +1,150 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 16px;
+}
+
+::placeholder {
+    color: #A1A1A1;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.leftContainer{
+    display: flex;
+    align-items: center;
+}
+
+.barsIcon {
+    box-sizing: content-box;
+    width: 24px;
+    height: 24px;
+    padding: 8px;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+.logoIcon {
+    box-sizing: content-box;
+    width: 90px;
+    height: 20px;
+    padding: 18px 14px 18px 16px;
+}
+.centerContainer {
+    display: flex;
+    align-items: center;
+}
+
+.centerContainer form{
+    display: flex;
+}
+
+.searchIconLeft {
+    width: 20px;
+    height: 20px;
+}
+
+.searchIconRight {
+    width: 24px;
+    height: 24px;
+
+}
+
+.inputContainer {
+    border: 1px solid #CCCCCC;
+    width: 572px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: inset 0 1px 2px #EEE
+}
+
+.inputContainer img {
+    margin: 0 auto;
+}
+
+.inputContainer input {
+    width: 525px;
+    height: 36px;
+    padding-left: 7px;
+    border: none;
+    font-weight: 400;
+    font-size: 16px;
+
+}
+
+.inputContainer input:focus{
+    outline: 1px solid blue;
+}
+
+.searchBtn {
+    width: 64px;
+    height: 40px;
+    border: 1px solid #CCCCCC;
+    border-left: none;
+    background-color: #F8F8F8;
+
+}
+
+/*.micContainer {
+    background-color: gray;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 6px;
+}*/
+
+.micIcon {
+    width: 24px;
+    height: 24px;
+    padding: 8px;
+    box-sizing: content-box;
+    border-radius: 50%;
+    background-color: #F9F9F9;
+    margin-left: 6px;
+}
+
+.rightContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.rightContainer .createCameraIcon {
+    width: 24px;
+    height: 24px;
+}
+
+.rightContainer .bellIcon {
+    width: 24px;
+    height: 24px;
+}
+
+.profilePhoto {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.rightContainer .icons {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: none;
+    margin-right: 8px;
+}
+
+.rightContainer .photo {
+    width: 60px;
+    height: 40px;
+    border: none;
+    background: none;
+    margin-right: 8px;
+}
+
+
