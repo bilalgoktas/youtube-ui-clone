@@ -14,7 +14,6 @@ const Header = () => {
         <div className={styles.centerContainer}>
             <form>
                 <div className={styles.inputContainer}>
-                <img className={styles.searchIconLeft} src={icons.search} alt="" />
                 <input type="text" placeholder="Search" />
                 </div>
                 <button className={styles.searchBtn}><img className={styles.searchIconRight} src={icons.search} alt="" /></button>
