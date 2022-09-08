@@ -1,6 +1,7 @@
 [
     {
         "title": "sample video",
+        "thumbnail": "www.link",
         "channel": "sample channel",
         "views": "250K",
         "uploadedBefore": "1 day",
