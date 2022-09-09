@@ -1,5 +1,6 @@
 .container {
     margin: 0 8px 40px 8px;
+    cursor: pointer;
 }
 
 .thumbnail {
@@ -34,6 +35,7 @@
     height: 36px;
     border-radius: 50%;
     margin-right: 12px;
+    object-fit: cover;
 }
 
 .title {
@@ -47,6 +49,21 @@
     font-size: 12px;
     margin-bottom: 2px;
     color: #606060;
+}
+
+.dot {
+position: relative;
+margin: 0 6px;
+}
+
+.dot::after {
+    content: ".";
+    font-weight: bold;
+    font-size: 14px;
+    position: absolute;
+    left: 50%;
+    top: -30%;
+    transform: translateX(-50%);
 }
 
 

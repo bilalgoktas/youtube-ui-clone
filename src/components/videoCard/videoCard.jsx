@@ -1,21 +1,21 @@
 import React from 'react';
 import styles from "./videoCard.module.css";
 
-const VideoCard = () => {
+const VideoCard = (props) => {
   return (
     <div className={styles.container}>
         <div className={styles.thumbnail}>
-            <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/youtube-thumbnail-template-design-d45e855a31739ec1f58b2d0ffb7013df_screen.jpg?ts=1591603072" alt="" />
-            <p className={styles.duration}>10:10</p>
+            <img src={props.thumbnail} alt="" />
+            <p className={styles.duration}>{props.duration}</p>
         </div>
         <div className={styles.details}>
             <div>
-              <img className={styles.channelLogo} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbYZCvWqu1uykJ20dU2fmQJ01BHjxvV2kuuA&usqp=CAU" alt="" />
+              <img className={styles.channelLogo} src={props.channelLogo} alt="" />
             </div>
             <div>
-            <h4 className={styles.title}>This title is for sample purposes. Do not take it seriously :)</h4>
-                <p>Channel name</p>
-                <p>1.5m view <span>12 days ago</span></p>
+            <h4 className={styles.title}>{props.title}</h4>
+                <p>{props.channel}</p>
+                <p>{props.views}<span className={styles.dot}></span><span>{props.uploadedBefore}</span></p>
             </div>
         </div>
         
