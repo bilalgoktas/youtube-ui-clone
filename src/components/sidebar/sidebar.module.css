@@ -30,8 +30,12 @@
 
 
 .section {
-    padding: 12px 0;
+    padding: 8px 0;
     border-bottom: 1px solid #e5e5e5;
+}
+
+.section:nth-of-type(1), .section:nth-of-type(2) {
+    padding: 12px 0;
 }
 
 .section h3 {
@@ -69,21 +73,30 @@
 
 }
 
+.subscriptions {
+    padding: 8px 0;
+}
+
 .subscriptions img {
     border-radius: 50%;
 
 }
 
+.bottomLinks {
+    padding: 8px 0;
+    line-height: 18px;
+}
+
 .bottomLinks .first {
-    padding: 4px 24px 0 24px;
+    padding: 4px 10px 0 24px;
 }
 
 .bottomLinks .second {
-    padding: 12px 24px 0 24px;
+    padding: 12px 10px 0 24px;
 }
 
 .bottomLinks .third {
-    padding: 16px 24px 4px 24px;
+    padding: 16px 24px 8px 24px;
     font-size: 12px;
     color: #909090;
 }

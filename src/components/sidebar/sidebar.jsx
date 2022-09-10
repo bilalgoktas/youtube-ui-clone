@@ -63,7 +63,7 @@ const Sidebar = () => {
         <a href="#">Terms</a>
         <a href="#">Privacy</a>
         <a href="#">Policy & Safety</a>
-        <a href="#">How Youtube works</a>
+        <a href="#">How YouTube works</a>
         <a href="#">Test new features</a>
         </div>
         <div className={styles.third}>

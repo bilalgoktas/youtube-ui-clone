@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from "./categoryButton.module.css";
 
-const CategoryButton = () => {
+const CategoryButton = (props) => {
   return (
     <div >
-        <button className={styles.btn}>Category</button>
+        <button className={styles.btn}>{props.name}</button>
     </div>
   )
 }
