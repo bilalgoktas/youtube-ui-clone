@@ -4,6 +4,7 @@
     overflow-y: scroll;
     top: 56px;
     bottom: 0;
+    overscroll-behavior: contain;
 }
 
 .container::-webkit-scrollbar {
