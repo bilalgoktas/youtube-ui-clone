@@ -2,22 +2,9 @@
     position: absolute;
     left: 240px;
     background-color: rgb(244, 244, 244);
-
+    width: calc(100% - 240px);
 }
 
-.categories {
-    position: fixed;
-    top: 56px;
-    height: 56px;
-    background-color: white;
-    width: 100%;
-    border-top: 1px solid #e5e5e5;
-    display: flex;
-    padding-left: 24px;
-    align-items: center;
-    z-index: 1000;
-
-}
 
 .videoCards {
     display: grid;

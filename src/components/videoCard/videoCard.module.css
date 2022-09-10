@@ -9,7 +9,7 @@
 
 .thumbnail img{
     width: 100%;
-    height: 152px;
+    aspect-ratio: 16/9;
     object-fit:contain;
     background-color: black;
 }

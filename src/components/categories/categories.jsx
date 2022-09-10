@@ -11,7 +11,7 @@ const Categories = () => {
         ref.current.scrollLeft += offset;
     }
 
-    const categories = ["That", "Is", "One", "Small", "Step", "For", "Mankind", "One", "Giant", "Leap", "For", "Man", "Who", "Is", "A Beginner", "In", "Frontend", "Development", "Like", "Me"];
+    const categories = ["That", "Is", "One", "Small", "Step", "For", "Mankind", "One", "Giant", "Leap", "For", "Man", "Who", "Is", "Beginner", "In", "Frontend", "Development", "Like", "Me", "Sample", "Example",];
 
 
 

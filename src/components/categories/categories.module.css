@@ -4,19 +4,19 @@
     top: 56px;
     height: 56px;
     background-color: white;
-    width: 100%;
+    width: calc(100% - 200px);
     border-top: 1px solid #e5e5e5;
     display: flex;
     padding-left: 24px;
     align-items: center;
     z-index: 1000;
-    overflow-x: scroll;
+    overflow-x: hidden;
 
 }
 
 .prev {
-    position: sticky;
-    left: 0;
+    position: fixed;
+    left: 240;
 }
 
 .next {
