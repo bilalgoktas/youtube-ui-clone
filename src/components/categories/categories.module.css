@@ -4,22 +4,42 @@
     top: 56px;
     height: 56px;
     background-color: white;
-    width: calc(100% - 200px);
+    width: calc(100% - 240px);
     border-top: 1px solid #e5e5e5;
     display: flex;
-    padding-left: 24px;
     align-items: center;
     z-index: 1000;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 
 }
 
-.prev {
+.scrollContainer {
+    width: 56px;
+    height: 56px;
+    background: rgb(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: fixed;
-    left: 240;
+
 }
 
-.next {
-    position: fixed;
+.scrollContainer.prev {
+    left: 240px;
+}
+
+.scrollContainer.next {
     right: 0;
+}
+
+.scrollContainer img {
+    width: 16px;
+    height: 16px;
+    padding: 8px;
+    cursor: pointer;
+    box-sizing: content-box;
+    background-color: white;
+    border-radius: 50%;
+
 }

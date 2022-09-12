@@ -1,5 +1,4 @@
-import React from 'react'
-import CategoryButton from "../../components/categoryButton/categoryButton";
+import React from 'react';
 import VideoCard from "../../components/videoCard/videoCard";
 import styles from "./home.module.css";
 import randomSentence from "random-sentence";
