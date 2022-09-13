@@ -5,20 +5,20 @@ import icons from "../../icons.js";
 import classNames from "classnames";
 
 
-const Header = () => {
+const Header = (props) => {
 
     const [isFocused, setIsFocused] = useState(false);
 
   return (
     <div className={styles.container}>
         <div className={styles.leftContainer}>
-            <button className={styles.barsIcon} ><img src={icons.bars} alt="" /></button>
+            <button className={styles.barsIcon} ><img onClick={()=> props.setIsBarsClicked(!props.isBarsClicked)} src={icons.bars} alt="" /></button>
             <img className={styles.logoIcon} src={icons.logo} alt="" />
         </div>
         <div className={styles.centerContainer}>
             <form>
                 <div className={classNames(styles.searchContainer, isFocused && styles.focus)}>
-            <img className={classNames(styles.searchIconLeft, isFocused && styles.show)} src={icons.search} alt="" />
+                <img className={classNames(styles.searchIconLeft, isFocused && styles.show)} src={icons.search} alt="" />
                 <div className={classNames(styles.inputContainer, isFocused && styles.focus)}>
                    
                 <input onFocus={() => setIsFocused(true)} onBlur={() => setIsFocused(false)} type="text" placeholder="Search" />

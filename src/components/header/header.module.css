@@ -36,6 +36,7 @@
     width: 90px;
     height: 20px;
     padding: 18px 14px 18px 16px;
+    cursor: pointer;
 }
 .centerContainer {
     display: flex;
@@ -79,6 +80,7 @@
     z-index: 10;
     height: 40px;
     margin-left: 33px;
+    border-radius: 2px 0 0 2px
 
 }
 
@@ -119,19 +121,12 @@
     border: 1px solid #CCCCCC;
     border-left: none;
     background-color: #F8F8F8;
+    border-radius: 0 2px 2px 0;
+    cursor: pointer;
 
 }
 
-/*.micContainer {
-    background-color: gray;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 6px;
-}*/
+
 
 .micIcon {
     width: 24px;
@@ -140,7 +135,8 @@
     box-sizing: content-box;
     border-radius: 50%;
     background-color: #F9F9F9;
-    margin-left: 6px;
+    margin-left: 8px;
+    cursor: pointer;
 }
 
 .rightContainer {
@@ -171,6 +167,7 @@
     border: none;
     background: none;
     margin-right: 8px;
+    cursor: pointer;
 }
 
 .rightContainer .photo {
@@ -179,6 +176,7 @@
     border: none;
     background: none;
     margin-right: 8px;
+    cursor: pointer;
 }
 
 
