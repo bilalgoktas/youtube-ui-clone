@@ -31,10 +31,12 @@ const Categories = () => {
 
   return (
     <div ref={ref} className={styles.container}>
-     { scrollPosition > 0 ? <div className={classNames(styles.scrollContainer, styles.prev)} ><img onClick={() => scroll(-150)} src={icons.leftArrow} alt="" /></div> : ""}
-     { scrollPosition < scrollLength && <div className={classNames(styles.scrollContainer, styles.next)}><img onClick={() => scroll(150)} src={icons.rightArrow} alt="" /></div>}
+
+      {scrollPosition > 0 ? <div className={classNames(styles.scrollContainer, styles.prev)} ><img onClick={() => scroll(-150)} src={icons.leftArrow} alt="" /></div> : ""}
+
+      {scrollPosition < scrollLength && <div className={classNames(styles.scrollContainer, styles.next)}><img onClick={() => scroll(150)} src={icons.rightArrow} alt="" /></div>}
     
-        {categories.map((category, index) => <CategoryButton key={index} index={index} length={categories.length} name={category} style={index === 1 && {marginLeft: "24px" }}/>)}
+      {categories.map((category, index) => <CategoryButton key={index} index={index} length={categories.length} name={category} style={index === 1 && {marginLeft: "24px" }}/>)}
   
 
     </div>

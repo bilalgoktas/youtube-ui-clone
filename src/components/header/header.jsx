@@ -1,10 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './header.module.css';
 import profilePhoto from "../../assets/img/profile-photo.jpeg"
 import icons from "../../icons.js";
+import classNames from "classnames";
 
 
 const Header = () => {
+
+    const [isFocused, setIsFocused] = useState(false);
+
   return (
     <div className={styles.container}>
         <div className={styles.leftContainer}>
@@ -13,8 +17,12 @@ const Header = () => {
         </div>
         <div className={styles.centerContainer}>
             <form>
-                <div className={styles.inputContainer}>
-                <input type="text" placeholder="Search" />
+                <div className={classNames(styles.searchContainer, isFocused && styles.focus)}>
+            <img className={classNames(styles.searchIconLeft, isFocused && styles.show)} src={icons.search} alt="" />
+                <div className={classNames(styles.inputContainer, isFocused && styles.focus)}>
+                   
+                <input onFocus={() => setIsFocused(true)} onBlur={() => setIsFocused(false)} type="text" placeholder="Search" />
+                </div>
                 </div>
                 <button className={styles.searchBtn}><img className={styles.searchIconRight} src={icons.search} alt="" /></button>
             </form>
