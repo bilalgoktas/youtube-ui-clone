@@ -15,6 +15,7 @@ import logo from "./assets/svg/logo-icon.svg";
 import mic from "./assets/svg/mic-icon.svg";
 import movies from "./assets/svg/movies-icon.svg";
 import premium from "./assets/svg/premium-icon.svg";
+import profilePhoto from "./assets/svg/profile-photo.svg"
 import report from "./assets/svg/report-icon.svg";
 import rightArrow from "./assets/svg/right-arrow-icon.svg";
 import search from "./assets/svg/search-icon.svg";
@@ -31,7 +32,7 @@ import youtubeMusic from "./assets/svg/youtube-music-icon.svg";
 import youtubeTv from "./assets/svg/youtube-tv-icon.svg";
 
 const icons = {
-    bars, bell, createCamera, creatorStudio, explore, feedback, gaming, help, history, home, leftArrow, library, like, logo, mic, movies, premium, report, rightArrow, search, settings, shorts, showMore, sports, subscriptions, watchLater, yourClips, yourVideos, youtubeKids, youtubeMusic, youtubeTv
+    bars, bell, createCamera, creatorStudio, explore, feedback, gaming, help, history, home, leftArrow, library, like, logo, mic, movies, premium, profilePhoto, report, rightArrow, search, settings, shorts, showMore, sports, subscriptions, watchLater, yourClips, yourVideos, youtubeKids, youtubeMusic, youtubeTv
 };
 
 export default icons;

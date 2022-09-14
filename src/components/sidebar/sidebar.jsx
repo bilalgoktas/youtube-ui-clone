@@ -2,70 +2,105 @@ import React, { Fragment } from 'react';
 import styles from "./sidebar.module.css";
 import classNames from "classnames";
 import icons from "../../icons.js";
-import profilePhoto from "../../assets/img/profile-photo.jpeg"
+
+const Button = ({icon, title}) => {
+  return(
+    <button className={styles.btn}> <img src={icon} alt={title} /> <span>{title}</span></button>
+  )
+}
+
 
 const Sidebar = (props) => {
+
+  const firstSection = [
+    {icon: icons.home, title: "Home"},
+    {icon: icons.explore, title: "Explore"},
+    {icon: icons.shorts, title: "Shorts"},
+    {icon: icons.subscriptions, title: "Subscriptions"},
+  ];
+
+  const secondSection = [
+    {icon: icons.library, title: "Library"},
+    {icon: icons.history, title: "History"},
+    {icon: icons.yourVideos, title: "Your videos"},
+    {icon: icons.watchLater, title: "Watch later"},
+    {icon: icons.yourClips, title: "Your clips"},
+    {icon: icons.showMore, title: "Show more"},
+  ];
+
+  const thirdSection = [
+    {icon: icons.profilePhoto, title: "Bilal Goktas"},
+    {icon: icons.profilePhoto, title: "Proudly Presents"},
+    {icon: icons.profilePhoto, title: "YouTube Homepage"},
+    {icon: icons.profilePhoto, title: "UI Clone"},
+    {icon: icons.showMore, title: "Show more"},
+  ];
+
+  const fourthSection = [
+    {icon: icons.movies, title: "Movies"},
+    {icon: icons.gaming, title: "Gaming"},
+    {icon: icons.sports, title: "Sports"},
+  ];
+
+  const fifthSection = [
+    {icon: icons.premium, title: "YouTube Premium"},
+    {icon: icons.creatorStudio, title: "Creator Studio"},
+    {icon: icons.youtubeMusic, title: "YouTube Music"},
+    {icon: icons.youtubeKids, title: "YouTube Kids"},
+    {icon: icons.youtubeTv, title: "YouTube TV"},
+  ];
+
+  const sixthSection = [
+    {icon: icons.settings, title: "Settings"},
+    {icon: icons.report, title: "Report history"},
+    {icon: icons.help, title: "Help"},
+    {icon: icons.feedback, title: "Send feedback"},
+  ];
+
+  const firstQuickLinks = ["About", "Press", "Copyright", "Contact us", "Creators", "Advertise", "Developers"];
+
+  const secondQuickLinks = ["Terms, Privacy", "Policy & Safety", "How YouTube works", "Test new features"];
+
+  const smallSidebarItems = [
+    {icon: icons.home, title: "Home"},
+    {icon: icons.explore, title: "Explore"},
+    {icon: icons.shorts, title: "Shorts"},
+    {icon: icons.subscriptions, title: "Subscriptions"},
+    {icon: icons.library, title: "Library"},
+  ]
+
+
+
   return (
     <Fragment>
     {props.isBarsClicked ? <div className={styles.largeContainer}>
     <div className={styles.section}>
-      <button className={styles.btn}> <img src={icons.home} alt="" /> <span>Home</span></button>
-      <button className={styles.btn}> <img src={icons.explore} alt="" /> <span>Explore</span></button>
-      <button className={styles.btn}> <img src={icons.shorts} alt="" /> <span>Shorts</span></button>
-      <button className={styles.btn}> <img src={icons.subscriptions} alt="" /> <span>Subscriptions</span></button>
+      {firstSection.map((item, index) => <Button key={index} icon={item.icon} title={item.title} />)}
     </div>
     <div className={styles.section}>
-      <button className={styles.btn}> <img src={icons.library} alt="" /> <span>Library</span></button>
-      <button className={styles.btn}> <img src={icons.history} alt="" /> <span>History</span></button>
-      <button className={styles.btn}> <img src={icons.yourVideos} alt="" /> <span>Your videos</span></button>
-      <button className={styles.btn}> <img src={icons.watchLater} alt="" /> <span>Watch later</span></button>
-      <button className={styles.btn}> <img src={icons.yourClips} alt="" /> <span>Your clips</span></button>
-      <button className={styles.btn}> <img src={icons.showMore} alt="" /> <span>Show more</span></button>
+      {secondSection.map((item, index) => <Button key={index} icon={item.icon} title={item.title} />)}
     </div>
     <div className= {classNames(styles.section, styles.subscriptions)}>
       <h3>subscriptions</h3>
-      <button className={styles.btn}> <img src={profilePhoto} alt="" /> <span>Sample Channel</span></button>
-      <button className={styles.btn}> <img src={profilePhoto} alt="" /> <span>Crazy coding</span></button>
-      <button className={styles.btn}> <img src={profilePhoto} alt="" /> <span>Let's Code Guys</span></button>
-      <button className={styles.btn}> <img src={profilePhoto} alt="" /> <span>Holy Moly Cody</span></button>
-      <button className={styles.btn}> <img src={icons.showMore} alt="" /> <span>Show more</span></button>
+     {thirdSection.map((item, index) => <Button key={index} icon={item.icon} title={item.title} />)}
     </div>
     <div className={styles.section}>
       <h3>explore</h3>
-      <button className={styles.btn}> <img src={icons.movies} alt="" /> <span>Movies</span></button>
-      <button className={styles.btn}> <img src={icons.gaming} alt="" /> <span>Gaming</span></button>
-      <button className={styles.btn}> <img src={icons.sports} alt="" /> <span>Sports</span></button>
+      {fourthSection.map((item, index) => <Button key={index} icon={item.icon} title={item.title} />)}
     </div>
     <div className={styles.section}>
       <h3>more from youtube</h3>
-      <button className={styles.btn}> <img src={icons.premium} alt="" /> <span>YouTube Premium</span></button>
-      <button className={styles.btn}> <img src={icons.creatorStudio} alt="" /> <span>Creator Studio</span></button>
-      <button className={styles.btn}> <img src={icons.youtubeMusic} alt="" /> <span>YouTube Music</span></button>
-      <button className={styles.btn}> <img src={icons.youtubeKids} alt="" /> <span>YouTube Kids</span></button>
-      <button className={styles.btn}> <img src={icons.youtubeTv} alt="" /> <span>YouTube TV</span></button>
+     {fifthSection.map((item, index) => <Button key={index} icon={item.icon} title={item.title} />)}
     </div>
     <div className={styles.section}>
-      <button className={styles.btn}> <img src={icons.settings} alt="" /> <span>Settings</span></button>
-      <button className={styles.btn}> <img src={icons.report} alt="" /> <span>Report history</span></button>
-      <button className={styles.btn}> <img src={icons.help} alt="" /> <span>Help</span></button>
-      <button className={styles.btn}> <img src={icons.feedback} alt="" /> <span>Send feedback</span></button>
+      {sixthSection.map((item, index) => <Button key={index} icon={item.icon} title={item.title} /> )}
     </div>
     <div className= {classNames(styles.section, styles.bottomLinks)}>
       <div className={styles.first}>
-      <a href="#">About</a>
-      <a href="#">Press</a>
-      <a href="#">Copyright</a>
-      <a href="#">Contact us</a>
-      <a href="#">Creators</a>
-      <a href="#">Advertise</a>
-      <a href="#">Developers</a>
+      {firstQuickLinks.map((item,index) => <a key={index} href="#">{item}</a> )}
       </div>
       <div className={styles.second}>
-      <a href="#">Terms</a>
-      <a href="#">Privacy</a>
-      <a href="#">Policy & Safety</a>
-      <a href="#">How YouTube works</a>
-      <a href="#">Test new features</a>
+      {secondQuickLinks.map((item,index) => <a key={index} href="#">{item}</a> )}
       </div>
       <div className={styles.third}>
       <p>© 2022 Google LLC YouTube, a Google company</p>
@@ -73,27 +108,13 @@ const Sidebar = (props) => {
      
     </div>
    
-  </div> : <div className={styles.smallContainer}>
-            <div className={styles.item} >
-              <img src={icons.home} alt="" />
-              <span>Home</span>
-            </div>
-            <div className={styles.item} >
-              <img src={icons.explore} alt="" />
-              <span>Explore</span>
-            </div>
-            <div className={styles.item} >
-              <img src={icons.shorts} alt="" />
-              <span>Shorts</span>
-            </div>
-            <div className={styles.item} >
-              <img src={icons.subscriptions} alt="" />
-              <span>Subscriptions</span>
-            </div>
-            <div className={styles.item} >
-              <img src={icons.library} alt="" />
-              <span>Library</span>
-            </div>
+  </div> : 
+  <div className={styles.smallContainer}>
+    {smallSidebarItems.map((item, index) => (
+          <div key={index} className={styles.item} >
+              <img src={item.icon} alt={item.title} />
+              <span>{item.title}</span>
+          </div>))}
     </div>}
 
   </Fragment>
