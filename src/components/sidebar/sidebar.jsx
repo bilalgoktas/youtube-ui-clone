@@ -1,13 +1,13 @@
-import React from 'react';
-import styles from "./largeSidebar.module.css";
+import React, { Fragment } from 'react';
+import styles from "./sidebar.module.css";
 import classNames from "classnames";
 import icons from "../../icons.js";
 import profilePhoto from "../../assets/img/profile-photo.jpeg"
 
-const LargeSidebar = () => {
+const Sidebar = (props) => {
   return (
-  
-    <div className={styles.container}>
+    <Fragment>
+    {props.isBarsClicked ? <div className={styles.largeContainer}>
     <div className={styles.section}>
       <button className={styles.btn}> <img src={icons.home} alt="" /> <span>Home</span></button>
       <button className={styles.btn}> <img src={icons.explore} alt="" /> <span>Explore</span></button>
@@ -73,9 +73,33 @@ const LargeSidebar = () => {
      
     </div>
    
-  </div> 
+  </div> : <div className={styles.smallContainer}>
+            <div className={styles.item} >
+              <img src={icons.home} alt="" />
+              <span>Home</span>
+            </div>
+            <div className={styles.item} >
+              <img src={icons.explore} alt="" />
+              <span>Explore</span>
+            </div>
+            <div className={styles.item} >
+              <img src={icons.shorts} alt="" />
+              <span>Shorts</span>
+            </div>
+            <div className={styles.item} >
+              <img src={icons.subscriptions} alt="" />
+              <span>Subscriptions</span>
+            </div>
+            <div className={styles.item} >
+              <img src={icons.library} alt="" />
+              <span>Library</span>
+            </div>
+    </div>}
+
+  </Fragment>
+    
     
   )
 }
 
-export default LargeSidebar
+export default Sidebar;

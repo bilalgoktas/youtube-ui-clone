@@ -1,12 +1,20 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import VideoCard from "../../components/videoCard/videoCard";
 import styles from "./home.module.css";
 import randomSentence from "random-sentence";
 import Categories from "../../components/categories/categories";
+import classNames from "classnames";
 
-const Home = () => {
+const Home = (props) => {
 
-  const mapper = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+  const [videosArray, setVideosArray] = useState([])
+
+  useEffect(() => {
+    setVideosArray(videos)
+  },[])
+
+
+
   const characters = ["M", "K"];
   const time = ["hours", "days", "months" , "years"];
 
@@ -27,11 +35,29 @@ const Home = () => {
 
   }
 
+  const videos = []
+
+  for (let i = 0; i < 20; i++) {
+    const video = {
+      title: randomSentence({min:8, max:10}).slice(0, -1),
+      thumbnail: randomImage(),
+      channelLogo: randomImage(),
+      channel: randomSentence({min:1, max:3}).slice(0, -1),
+      views: `${randomNumber(10, 150)}${randomStringFromArray(characters)} views`,
+      uploadedBefore: `${randomNumber(1, 7)} ${randomStringFromArray(time)} ago`,
+      duration: `${randomNumber(0, 59).toLocaleString('en-US',{minimumIntegerDigits: 2})}:${randomNumber(0,59).toLocaleString('en-US',{minimumIntegerDigits: 2})}`,
+    };
+  
+    videos.push(video)
+    
+  }
+
+
   return (
-    <div className={styles.container}>
-        <Categories/>
+    <div className={classNames(styles.container, !props.isBarsClicked && styles.sidebarSmall)}>
+        <Categories isBarsClicked={props.isBarsClicked}/>
         <div className={styles.videoCards}>{ 
-          mapper.map((item, index) => <VideoCard key={index} title= {randomSentence({min:8, max:10}).slice(0, -1)} thumbnail={randomImage()} channelLogo={randomImage()} channel={randomSentence({min:1, max:3}).slice(0, -1)} views={`${randomNumber(10, 150)}${randomStringFromArray(characters)} views`} uploadedBefore={`${randomNumber(1, 7)} ${randomStringFromArray(time)} ago`} duration={`${randomNumber(0, 59).toLocaleString('en-US',{minimumIntegerDigits: 2})}:${randomNumber(0,59).toLocaleString('en-US',{minimumIntegerDigits: 2})}`}/>)
+          videosArray.map((item, index) => <VideoCard key={index} title= {item.title} thumbnail={item.thumbnail} channelLogo={item.channelLogo} channel={item.channel} views={item.views} uploadedBefore={item.uploadedBefore} duration={item.duration}/>)
         }
         </div>
     </div>

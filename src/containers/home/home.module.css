@@ -5,6 +5,12 @@
     width: calc(100% - 240px);
 }
 
+.container.sidebarSmall {
+    left: 72px;
+    width: calc(100% - 72px);
+
+}
+
 
 .videoCards {
     display: grid;

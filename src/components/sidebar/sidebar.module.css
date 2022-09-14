@@ -1,4 +1,4 @@
-.container {
+.largeContainer {
     position: fixed;
     width: 240px;
     overflow-y: scroll;
@@ -7,15 +7,15 @@
     overscroll-behavior: contain;
 }
 
-.container::-webkit-scrollbar {
+.largeContainer::-webkit-scrollbar {
     width: 14px;
 }
 
-.container::-webkit-scrollbar-track {
+.largeContainer::-webkit-scrollbar-track {
     background-color: transparent;
 }
 
-.container::-webkit-scrollbar-thumb {
+.largeContainer::-webkit-scrollbar-thumb {
     visibility: hidden;
     height: 56px;
     border-radius: 8px;
@@ -23,7 +23,7 @@
     border: 3px solid #FFF;
   }
 
-  .container:hover::-webkit-scrollbar-thumb {
+  .largeContainer:hover::-webkit-scrollbar-thumb {
     visibility: visible;
   }
 
@@ -108,4 +108,32 @@
     font-weight: 500;
     margin-right: 8px;
     display: inline-block;
+}
+
+.smallContainer {
+    position: fixed;
+    top: 56px;
+    bottom: 0;
+    margin-top: 4px;
+}
+
+.smallContainer .item {
+    height: 44px;
+    width: 72px;
+    padding: 16px 0 14px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: content-box;
+}
+
+.smallContainer .item img {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 6px;
+}
+
+.smallContainer .item span {
+    font-size: 10px;
+    line-height: 14px;
 }

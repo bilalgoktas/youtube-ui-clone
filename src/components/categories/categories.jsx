@@ -5,7 +5,7 @@ import icons from "../../icons.js";
 import classNames from "classnames";
 
 
-const Categories = () => {
+const Categories = (props) => {
 
   const [scrollPosition, setScrollPosition] = useState(0);
   const [scrollLength, setScrollLength] = useState(1);
@@ -13,13 +13,15 @@ const Categories = () => {
 
   useEffect(()=> {
     setScrollLength(ref.current.scrollWidth - ref.current.clientWidth);
-  },[])
+    setScrollPosition(ref.current.scrollLeft);
+    console.log(scrollPosition)
+  },[props.isBarsClicked])
 
 
   const ref = useRef();
 
   const scroll = (offset) => {
-    setScrollPosition(    ref.current.scrollLeft += offset);
+    setScrollPosition(ref.current.scrollLeft += offset);
     console.log(scrollPosition)
     };
   
@@ -30,9 +32,9 @@ const Categories = () => {
 
 
   return (
-    <div ref={ref} className={styles.container}>
+    <div ref={ref} className={classNames(styles.container, !props.isBarsClicked && styles.sidebarSmall )}>
 
-      {scrollPosition > 0 ? <div className={classNames(styles.scrollContainer, styles.prev)} ><img onClick={() => scroll(-150)} src={icons.leftArrow} alt="" /></div> : ""}
+      {scrollPosition > 0 ? <div className={classNames(styles.scrollContainer, styles.prev, !props.isBarsClicked && styles.sidebarSmall)} ><img onClick={() => scroll(-150)} src={icons.leftArrow} alt="" /></div> : ""}
 
       {scrollPosition < scrollLength && <div className={classNames(styles.scrollContainer, styles.next)}><img onClick={() => scroll(150)} src={icons.rightArrow} alt="" /></div>}
     

@@ -14,6 +14,10 @@
 
 }
 
+.container.sidebarSmall {
+    width: calc(100% - 72px);
+}
+
 .scrollContainer {
     width: 56px;
     height: 56px;
@@ -27,6 +31,10 @@
 
 .scrollContainer.prev {
     left: 240px;
+}
+
+.scrollContainer.prev.sidebarSmall {
+    left: 72px
 }
 
 .scrollContainer.next {
