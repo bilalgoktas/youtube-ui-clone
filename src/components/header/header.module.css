@@ -37,7 +37,19 @@
     height: 20px;
     padding: 18px 14px 18px 16px;
     cursor: pointer;
+    position: relative;
 }
+
+.countryCode {
+    position: absolute;
+    right: -3px;
+    top: 12px;
+    font-size: 10px;
+    text-decoration: none;
+    color: #606060;
+
+}
+
 .centerContainer {
     display: flex;
     align-items: center;

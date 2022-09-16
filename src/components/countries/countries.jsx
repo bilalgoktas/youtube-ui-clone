@@ -6,8 +6,8 @@ const Countries = ({setDrawerOpen, setCountriesOpen, setCountryCode}) => {
     const countries = [
         {name: "Netherlands", code: "NL"},
         {name: "Turkey", code: "TR"},
-        {name: "United States", code: "US"},
-        {name: "United Kingdom", code: "UK"},
+        {name: "United States", code: ""},
+        {name: "United Kingdom", code: "GB"},
     ]
 
   return (
