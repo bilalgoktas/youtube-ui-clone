@@ -1,5 +1,7 @@
+import backArrow from "./assets/svg/back-arrow-icon.svg";
 import bars from "./assets/svg/bars-icon.svg";
 import bell from "./assets/svg/bell-icon.svg";
+import check from "./assets/svg/check-icon.svg";
 import createCamera from "./assets/svg/create-camera-icon.svg";
 import creatorStudio from "./assets/svg/creator-studio-icon.svg";
 import explore from "./assets/svg/explore-icon.svg";
@@ -32,7 +34,7 @@ import youtubeMusic from "./assets/svg/youtube-music-icon.svg";
 import youtubeTv from "./assets/svg/youtube-tv-icon.svg";
 
 const icons = {
-    bars, bell, createCamera, creatorStudio, explore, feedback, gaming, help, history, home, leftArrow, library, like, logo, mic, movies, premium, profilePhoto, report, rightArrow, search, settings, shorts, showMore, sports, subscriptions, watchLater, yourClips, yourVideos, youtubeKids, youtubeMusic, youtubeTv
+    backArrow, bars, bell, check, createCamera, creatorStudio, explore, feedback, gaming, help, history, home, leftArrow, library, like, logo, mic, movies, premium, profilePhoto, report, rightArrow, search, settings, shorts, showMore, sports, subscriptions, watchLater, yourClips, yourVideos, youtubeKids, youtubeMusic, youtubeTv
 };
 
 export default icons;

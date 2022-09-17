@@ -43,10 +43,10 @@ const Header = (props) => {
         <div className={styles.rightContainer}>
             <button className={styles.icons}> <img className={styles.createCameraIcon} src={icons.createCamera} alt="" /></button>
             <button className={styles.icons}><img className={styles.bellIcon} src={icons.bell} alt="" /></button>
-            <button className={styles.photo} onClick={()=> {setDrawerOpen(!drawerOpen); setCountriesOpen(false)}} ><img className={styles.profilePhoto} src={profilePhoto} alt="" /></button>
+            <button className={styles.photo} onClick={()=> {if(!countriesOpen) setDrawerOpen(!drawerOpen); setCountriesOpen(false)}} ><img className={styles.profilePhoto} src={profilePhoto} alt="" /></button>
         </div>
         {drawerOpen && <Drawer setDrawerOpen={setDrawerOpen} setCountriesOpen={setCountriesOpen} />}
-        {countriesOpen && <Countries setDrawerOpen={setDrawerOpen} setCountriesOpen={setCountriesOpen} setCountryCode={setCountryCode}/>}
+        {countriesOpen && <Countries setDrawerOpen={setDrawerOpen} setCountriesOpen={setCountriesOpen} setCountryCode={setCountryCode} countryCode={countryCode} />}
     </div>
   )
 }
