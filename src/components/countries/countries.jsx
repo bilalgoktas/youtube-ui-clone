@@ -3,7 +3,7 @@ import React from 'react';
 import icons from "../../icons";
 import styles from "./countries.module.css";
 
-const Countries = ({setDrawerOpen, setCountriesOpen, setCountryCode, countryCode}) => {
+const Countries = ({setDrawerOpen, setCountriesOpen, setLocation, location}) => {
     
     const countries = [
         {name: 'Afghanistan', code: 'AF'},
@@ -213,7 +213,7 @@ const Countries = ({setDrawerOpen, setCountriesOpen, setCountryCode, countryCode
         </div>
         
         <div className={styles.listContainer}>
-        {countries.map(country => <button onClick={() => {setCountryCode(country.code); setDrawerOpen(false); setCountriesOpen(false)}} ><img className={classNames(styles.checkIcon, country.code === countryCode && styles.checked)} src={icons.check}/><span>{country.name}</span></button>)}
+        {countries.map(country => <button onClick={() => {setLocation(country); setDrawerOpen(false); setCountriesOpen(false)}} ><img className={classNames(styles.checkIcon, country === location && styles.checked)} src={icons.check}/><span>{country.name}</span></button>)}
         </div>
     </div>
   )

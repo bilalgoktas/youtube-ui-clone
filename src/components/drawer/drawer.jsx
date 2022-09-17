@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import icons from "../../icons";
 import styles from "./drawer.module.css";
 
-const Drawer = ({setDrawerOpen, setCountriesOpen}) => {
+const Drawer = ({setDrawerOpen, setCountriesOpen, location}) => {
 
     const firstSection = [
         {icon: icons.yourChannel, title: "Your channel"},
@@ -20,7 +20,7 @@ const Drawer = ({setDrawerOpen, setCountriesOpen}) => {
         {icon: icons.moon, title: "Appearance: Light", onClick: ()=> {}},
         {icon: icons.language, title: "Language: English", onClick: ()=> {}},
         {icon: icons.restricted, title: "Restricted Mode: Off", onClick: ()=> {}},
-        {icon: icons.globe, title: `Location: Malta`, onClick: ()=> {setCountriesOpen(true); setDrawerOpen(false)}},
+        {icon: icons.globe, title: `Location: ${location.name}`, onClick: ()=> {setCountriesOpen(true); setDrawerOpen(false)}},
         {icon: icons.keyboard, title: "Keyboard shortcuts", onClick: ()=> {}},
     ];
 

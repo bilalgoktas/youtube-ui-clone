@@ -1,6 +1,5 @@
 .container {
     width: 290px;
-    background-color: white;
     /* height: calc(100vh- 10px); */
     position: fixed;
     right: 85px;
@@ -15,6 +14,7 @@
     display: flex;
     padding: 16px;
     border-bottom: 1px solid gray;
+    background-color: white;
 }
 
 .manage img {
@@ -41,6 +41,7 @@
     overflow-y: scroll;
     height: calc(100vh - 92px);
     overscroll-behavior: contain;
+    background-color: rgba(255, 255, 255, 0.98)
     
 }
 

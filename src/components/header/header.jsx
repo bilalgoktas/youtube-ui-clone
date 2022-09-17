@@ -12,7 +12,7 @@ const Header = (props) => {
     const [isFocused, setIsFocused] = useState(false);
     const [drawerOpen, setDrawerOpen] = useState(false);
     const [countriesOpen, setCountriesOpen] = useState(false);
-    const [countryCode, setCountryCode] = useState("NL");
+    const [location, setLocation] = useState({name:"Netherlands", code:"NL"});
 
 
   return (
@@ -21,7 +21,7 @@ const Header = (props) => {
             <button className={styles.barsIcon} ><img onClick={()=> props.setIsBarsClicked(!props.isBarsClicked)} src={icons.bars} alt="" /></button>
             <a href="" className={styles.logoIcon}>
             <img src={icons.logo} alt="" />
-            <span className={styles.countryCode}>{countryCode}</span>
+            <span className={styles.countryCode}>{location.code}</span>
             </a>
             
         </div>
@@ -45,8 +45,8 @@ const Header = (props) => {
             <button className={styles.icons}><img className={styles.bellIcon} src={icons.bell} alt="" /></button>
             <button className={styles.photo} onClick={()=> {if(!countriesOpen) setDrawerOpen(!drawerOpen); setCountriesOpen(false)}} ><img className={styles.profilePhoto} src={profilePhoto} alt="" /></button>
         </div>
-        {drawerOpen && <Drawer setDrawerOpen={setDrawerOpen} setCountriesOpen={setCountriesOpen} />}
-        {countriesOpen && <Countries setDrawerOpen={setDrawerOpen} setCountriesOpen={setCountriesOpen} setCountryCode={setCountryCode} countryCode={countryCode} />}
+        {drawerOpen && <Drawer setDrawerOpen={setDrawerOpen} setCountriesOpen={setCountriesOpen} location={location}/>}
+        {countriesOpen && <Countries setDrawerOpen={setDrawerOpen} setCountriesOpen={setCountriesOpen} setLocation={setLocation} location={location} />}
     </div>
   )
 }
