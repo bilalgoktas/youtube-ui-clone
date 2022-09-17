@@ -22,7 +22,7 @@ import mic from "./assets/svg/mic-icon.svg";
 import moon from "./assets/svg/moon-icon.svg";
 import movies from "./assets/svg/movies-icon.svg";
 import premium from "./assets/svg/premium-icon.svg";
-import profilePhoto from "./assets/svg/profile-photo.svg"
+import profilePhoto from "./assets/svg/profile-photo.svg";
 import report from "./assets/svg/report-icon.svg";
 import restricted from "./assets/svg/restricted-icon.svg";
 import rightArrow from "./assets/svg/right-arrow-icon.svg";
@@ -45,7 +45,51 @@ import youtubeStudio from "./assets/svg/youtube-studio-icon.svg";
 import youtubeTv from "./assets/svg/youtube-tv-icon.svg";
 
 const icons = {
-    backArrow, bars, bell, check, createCamera, creatorStudio, dollar, explore, feedback, gaming, globe, help, history, home, keyboard, language, leftArrow, library, like, logo, mic, moon, movies, premium, profilePhoto, report, restricted, rightArrow, search, settings, shorts, showMore, signout, sports, subscriptions, switchAccount, watchLater, yourChannel, yourClips, yourData, yourVideos, youtubeKids, youtubeMusic, youtubeStudio, youtubeTv
+  backArrow,
+  bars,
+  bell,
+  check,
+  createCamera,
+  creatorStudio,
+  dollar,
+  explore,
+  feedback,
+  gaming,
+  globe,
+  help,
+  history,
+  home,
+  keyboard,
+  language,
+  leftArrow,
+  library,
+  like,
+  logo,
+  mic,
+  moon,
+  movies,
+  premium,
+  profilePhoto,
+  report,
+  restricted,
+  rightArrow,
+  search,
+  settings,
+  shorts,
+  showMore,
+  signout,
+  sports,
+  subscriptions,
+  switchAccount,
+  watchLater,
+  yourChannel,
+  yourClips,
+  yourData,
+  yourVideos,
+  youtubeKids,
+  youtubeMusic,
+  youtubeStudio,
+  youtubeTv,
 };
 
 export default icons;
