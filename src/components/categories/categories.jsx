@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import CategoryButton from "../categoryButton/categoryButton";
 import styles from "./categories.module.css";
+import allCategories from "../../data/allCategories";
 import icons from "../../icons.js";
 import classNames from "classnames";
 
@@ -20,31 +21,6 @@ const Categories = ({ isBarsClicked }) => {
     setScrollPosition((ref.current.scrollLeft += offset));
     console.log(scrollPosition);
   };
-
-  const categories = [
-    "That",
-    "Is",
-    "One",
-    "Small",
-    "Step",
-    "For",
-    "Mankind",
-    "One",
-    "Giant",
-    "Leap",
-    "For",
-    "Man",
-    "Who",
-    "Is",
-    "Beginner",
-    "In",
-    "Frontend",
-    "Development",
-    "Like",
-    "Me",
-    "Sample",
-    "Example",
-  ];
 
   return (
     <div
@@ -74,11 +50,11 @@ const Categories = ({ isBarsClicked }) => {
         </div>
       )}
 
-      {categories.map((category, index) => (
+      {allCategories.map((category, index) => (
         <CategoryButton
           key={index}
           index={index}
-          length={categories.length}
+          length={allCategories.length}
           name={category}
         />
       ))}
