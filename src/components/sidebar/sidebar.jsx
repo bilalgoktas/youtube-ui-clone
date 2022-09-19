@@ -12,7 +12,7 @@ const Button = ({ icon, title }) => {
   );
 };
 
-const Sidebar = (props) => {
+const Sidebar = ({ isBarsClicked }) => {
   const firstSection = [
     { icon: icons.home, title: "Home" },
     { icon: icons.explore, title: "Explore" },
@@ -85,7 +85,7 @@ const Sidebar = (props) => {
 
   return (
     <Fragment>
-      {props.isBarsClicked ? (
+      {isBarsClicked ? (
         <div className={styles.largeContainer}>
           <div className={styles.section}>
             {firstSection.map((item, index) => (

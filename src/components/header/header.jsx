@@ -6,7 +6,7 @@ import classNames from "classnames";
 import Drawer from "../drawer/drawer";
 import Countries from "../countries/countries";
 
-const Header = (props) => {
+const Header = ({ setIsBarsClicked, isBarsClicked }) => {
   const [isFocused, setIsFocused] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [countriesOpen, setCountriesOpen] = useState(false);
@@ -17,7 +17,7 @@ const Header = (props) => {
       <div className={styles.leftContainer}>
         <button className={styles.barsIcon}>
           <img
-            onClick={() => props.setIsBarsClicked(!props.isBarsClicked)}
+            onClick={() => setIsBarsClicked(!isBarsClicked)}
             src={icons.bars}
             alt=""
           />

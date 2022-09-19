@@ -1,24 +1,32 @@
 import React from "react";
 import styles from "./videoCard.module.css";
 
-const VideoCard = (props) => {
+const VideoCard = ({
+  title,
+  thumbnail,
+  channelLogo,
+  channel,
+  views,
+  uploadedBefore,
+  duration,
+}) => {
   return (
     <div className={styles.container}>
       <div className={styles.thumbnail}>
-        <img src={props.thumbnail} alt="" />
-        <p className={styles.duration}>{props.duration}</p>
+        <img src={thumbnail} alt="" />
+        <p className={styles.duration}>{duration}</p>
       </div>
       <div className={styles.details}>
         <div>
-          <img className={styles.channelLogo} src={props.channelLogo} alt="" />
+          <img className={styles.channelLogo} src={channelLogo} alt="" />
         </div>
         <div>
-          <h4 className={styles.title}>{props.title}</h4>
-          <p>{props.channel}</p>
+          <h4 className={styles.title}>{title}</h4>
+          <p>{channel}</p>
           <p>
-            {props.views}
+            {views}
             <span className={styles.dot}></span>
-            <span>{props.uploadedBefore}</span>
+            <span>{uploadedBefore}</span>
           </p>
         </div>
       </div>

@@ -4,7 +4,7 @@ import styles from "./categories.module.css";
 import icons from "../../icons.js";
 import classNames from "classnames";
 
-const Categories = (props) => {
+const Categories = ({ isBarsClicked }) => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [scrollLength, setScrollLength] = useState(1);
 
@@ -12,7 +12,7 @@ const Categories = (props) => {
     setScrollLength(ref.current.scrollWidth - ref.current.clientWidth);
     setScrollPosition(ref.current.scrollLeft);
     console.log(scrollPosition);
-  }, [props.isBarsClicked]);
+  }, [isBarsClicked]);
 
   const ref = useRef();
 
@@ -51,7 +51,7 @@ const Categories = (props) => {
       ref={ref}
       className={classNames(
         styles.container,
-        !props.isBarsClicked && styles.sidebarSmall
+        !isBarsClicked && styles.sidebarSmall
       )}
     >
       {scrollPosition > 0 ? (
@@ -59,7 +59,7 @@ const Categories = (props) => {
           className={classNames(
             styles.scrollContainer,
             styles.prev,
-            !props.isBarsClicked && styles.sidebarSmall
+            !isBarsClicked && styles.sidebarSmall
           )}
         >
           <img onClick={() => scroll(-150)} src={icons.leftArrow} alt="" />
@@ -80,7 +80,6 @@ const Categories = (props) => {
           index={index}
           length={categories.length}
           name={category}
-          style={index === 1 && { marginLeft: "24px" }}
         />
       ))}
     </div>
