@@ -1,8 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import icons from "../../icons";
 import styles from "./drawer.module.css";
 
-const Drawer = ({ setDrawerOpen, setCountriesOpen, location }) => {
+const Drawer = ({
+  setDrawerOpen,
+  setCountriesOpen,
+  setThemeTogglerOpen,
+  location,
+}) => {
   const firstSection = [
     { icon: icons.yourChannel, title: "Your channel" },
     { icon: icons.youtubeStudio, title: "YouTube Studio" },
@@ -16,7 +21,14 @@ const Drawer = ({ setDrawerOpen, setCountriesOpen, location }) => {
   ];
 
   const thirdSection = [
-    { icon: icons.moon, title: "Appearance: Light", onClick: () => {} },
+    {
+      icon: icons.moon,
+      title: "Appearance: Light",
+      onClick: () => {
+        setThemeTogglerOpen(true);
+        setDrawerOpen(false);
+      },
+    },
     { icon: icons.language, title: "Language: English", onClick: () => {} },
     {
       icon: icons.restricted,

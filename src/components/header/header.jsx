@@ -5,12 +5,14 @@ import icons from "../../icons.js";
 import classNames from "classnames";
 import Drawer from "../drawer/drawer";
 import Countries from "../countries/countries";
+import ThemeToggler from "../themeToggler/themeToggler";
 
-const Header = ({ setIsBarsClicked, isBarsClicked }) => {
+const Header = ({ setIsBarsClicked, isBarsClicked, setDarkTheme }) => {
   const [isFocused, setIsFocused] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [countriesOpen, setCountriesOpen] = useState(false);
   const [location, setLocation] = useState({ name: "Netherlands", code: "NL" });
+  const [themeTogglerOpen, setThemeTogglerOpen] = useState(false);
 
   return (
     <div className={styles.container}>
@@ -90,6 +92,7 @@ const Header = ({ setIsBarsClicked, isBarsClicked }) => {
         <Drawer
           setDrawerOpen={setDrawerOpen}
           setCountriesOpen={setCountriesOpen}
+          setThemeTogglerOpen={setThemeTogglerOpen}
           location={location}
         />
       )}
@@ -99,6 +102,13 @@ const Header = ({ setIsBarsClicked, isBarsClicked }) => {
           setCountriesOpen={setCountriesOpen}
           setLocation={setLocation}
           location={location}
+        />
+      )}
+      {themeTogglerOpen && (
+        <ThemeToggler
+          setDrawerOpen={setDrawerOpen}
+          setThemeTogglerOpen={setThemeTogglerOpen}
+          setDarkTheme={setDarkTheme}
         />
       )}
     </div>
