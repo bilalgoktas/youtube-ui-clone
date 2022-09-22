@@ -66,5 +66,9 @@ margin: 0 6px;
     transform: translateX(-50%);
 }
 
+.container.dark .title {
+    color: #fff;
+}
+
 
 

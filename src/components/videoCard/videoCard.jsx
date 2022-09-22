@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./videoCard.module.css";
+import classNames from "classnames";
 
 const VideoCard = ({
   title,
@@ -9,9 +10,10 @@ const VideoCard = ({
   views,
   uploadedBefore,
   duration,
+  darkTheme,
 }) => {
   return (
-    <div className={styles.container}>
+    <div className={classNames(styles.container, darkTheme && styles.dark)}>
       <div className={styles.thumbnail}>
         <img src={thumbnail} alt="" />
         <p className={styles.duration}>{duration}</p>

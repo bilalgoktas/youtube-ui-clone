@@ -1,8 +1,14 @@
 import React from "react";
 import icons from "../../icons";
 import styles from "./themeToggler.module.css";
+import classNames from "classnames";
 
-const ThemeToggler = ({ setThemeTogglerOpen, setDrawerOpen, setDarkTheme }) => {
+const ThemeToggler = ({
+  setThemeTogglerOpen,
+  setDrawerOpen,
+  setDarkTheme,
+  darkTheme,
+}) => {
   return (
     <div className={styles.container}>
       <div className={styles.titleContainer}>
@@ -15,9 +21,10 @@ const ThemeToggler = ({ setThemeTogglerOpen, setDrawerOpen, setDarkTheme }) => {
         >
           <img src={icons.backArrow} />
         </button>
-        <span>Theme</span>
+        <span>Appearance</span>
       </div>
       <div className={styles.listContainer}>
+        <button>Use device theme</button>
         <button
           onClick={() => {
             setDarkTheme(true);
@@ -25,7 +32,14 @@ const ThemeToggler = ({ setThemeTogglerOpen, setDrawerOpen, setDarkTheme }) => {
             setThemeTogglerOpen(false);
           }}
         >
-          Dark theme
+          <img
+            className={classNames(
+              styles.checkIcon,
+              darkTheme && styles.checked
+            )}
+            src={icons.check}
+          />
+          <span>Dark theme</span>
         </button>
         <button
           onClick={() => {
@@ -34,7 +48,14 @@ const ThemeToggler = ({ setThemeTogglerOpen, setDrawerOpen, setDarkTheme }) => {
             setThemeTogglerOpen(false);
           }}
         >
-          Light theme
+          <img
+            className={classNames(
+              styles.checkIcon,
+              !darkTheme && styles.checked
+            )}
+            src={icons.check}
+          />
+          <span>Light theme</span>
         </button>
       </div>
     </div>

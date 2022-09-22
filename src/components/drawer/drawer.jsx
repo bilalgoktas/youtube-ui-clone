@@ -65,7 +65,7 @@ const Drawer = ({
       <div className={styles.buttonsContainer}>
         <div className={styles.section}>
           {firstSection.map((item, index) => (
-            <button>
+            <button key={index}>
               <img src={item.icon} />
               <span>{item.title}</span>
             </button>
@@ -73,7 +73,7 @@ const Drawer = ({
         </div>
         <div className={styles.section}>
           {secondSection.map((item, index) => (
-            <button>
+            <button key={index}>
               <img src={item.icon} />
               <span>{item.title}</span>
             </button>
@@ -81,7 +81,7 @@ const Drawer = ({
         </div>
         <div className={styles.section}>
           {thirdSection.map((item, index) => (
-            <button onClick={item.onClick}>
+            <button key={index} onClick={item.onClick}>
               <img src={item.icon} />
               <span>{item.title}</span>
             </button>
@@ -89,7 +89,7 @@ const Drawer = ({
         </div>
         <div className={styles.section}>
           {fourthSection.map((item, index) => (
-            <button>
+            <button key={index}>
               <img src={item.icon} />
               <span>{item.title}</span>
             </button>
@@ -97,7 +97,7 @@ const Drawer = ({
         </div>
         <div className={styles.section}>
           {fifthSection.map((item, index) => (
-            <button>
+            <button key={index}>
               <img src={item.icon} />
               <span>{item.title}</span>
             </button>

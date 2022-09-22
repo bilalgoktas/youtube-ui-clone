@@ -7,3 +7,9 @@
     cursor: pointer;
     font-size: 14px;
 }
+
+.btn.dark {
+    background-color: #373737;
+    color: #fff;
+    border: 1px solid #4b4b4b;
+}

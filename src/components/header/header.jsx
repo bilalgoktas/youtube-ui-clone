@@ -7,7 +7,12 @@ import Drawer from "../drawer/drawer";
 import Countries from "../countries/countries";
 import ThemeToggler from "../themeToggler/themeToggler";
 
-const Header = ({ setIsBarsClicked, isBarsClicked, setDarkTheme }) => {
+const Header = ({
+  setIsBarsClicked,
+  isBarsClicked,
+  setDarkTheme,
+  darkTheme,
+}) => {
   const [isFocused, setIsFocused] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [countriesOpen, setCountriesOpen] = useState(false);
@@ -15,7 +20,7 @@ const Header = ({ setIsBarsClicked, isBarsClicked, setDarkTheme }) => {
   const [themeTogglerOpen, setThemeTogglerOpen] = useState(false);
 
   return (
-    <div className={styles.container}>
+    <div className={classNames(styles.container, darkTheme && styles.dark)}>
       <div className={styles.leftContainer}>
         <button className={styles.barsIcon}>
           <img
@@ -48,7 +53,8 @@ const Header = ({ setIsBarsClicked, isBarsClicked, setDarkTheme }) => {
             <div
               className={classNames(
                 styles.inputContainer,
-                isFocused && styles.focus
+                isFocused && styles.focus,
+                darkTheme && styles.dark
               )}
             >
               <input
@@ -81,8 +87,13 @@ const Header = ({ setIsBarsClicked, isBarsClicked, setDarkTheme }) => {
         <button
           className={styles.photo}
           onClick={() => {
-            if (!countriesOpen) setDrawerOpen(!drawerOpen);
+            {
+              countriesOpen | themeTogglerOpen | drawerOpen
+                ? setDrawerOpen(false)
+                : setDrawerOpen(true);
+            }
             setCountriesOpen(false);
+            setThemeTogglerOpen(false);
           }}
         >
           <img className={styles.profilePhoto} src={profilePhoto} alt="" />
@@ -109,6 +120,7 @@ const Header = ({ setIsBarsClicked, isBarsClicked, setDarkTheme }) => {
           setDrawerOpen={setDrawerOpen}
           setThemeTogglerOpen={setThemeTogglerOpen}
           setDarkTheme={setDarkTheme}
+          darkTheme={darkTheme}
         />
       )}
     </div>

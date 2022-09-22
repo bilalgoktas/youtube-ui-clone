@@ -5,7 +5,7 @@ import allCategories from "../../data/allCategories";
 import icons from "../../icons.js";
 import classNames from "classnames";
 
-const Categories = ({ isBarsClicked }) => {
+const Categories = ({ isBarsClicked, darkTheme }) => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [scrollLength, setScrollLength] = useState(1);
 
@@ -27,7 +27,8 @@ const Categories = ({ isBarsClicked }) => {
       ref={ref}
       className={classNames(
         styles.container,
-        !isBarsClicked && styles.sidebarSmall
+        !isBarsClicked && styles.sidebarSmall,
+        darkTheme && styles.dark
       )}
     >
       {scrollPosition > 0 ? (
@@ -56,6 +57,7 @@ const Categories = ({ isBarsClicked }) => {
           index={index}
           length={allCategories.length}
           name={category}
+          darkTheme={darkTheme}
         />
       ))}
     </div>

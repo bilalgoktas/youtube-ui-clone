@@ -3,16 +3,16 @@ import styles from "./sidebar.module.css";
 import classNames from "classnames";
 import icons from "../../icons.js";
 
-const Button = ({ icon, title }) => {
+const Button = ({ icon, title, darkTheme }) => {
   return (
-    <button className={styles.btn}>
+    <button className={classNames(styles.btn, darkTheme && styles.dark)}>
       {" "}
       <img src={icon} alt={title} /> <span>{title}</span>
     </button>
   );
 };
 
-const Sidebar = ({ isBarsClicked }) => {
+const Sidebar = ({ isBarsClicked, darkTheme }) => {
   const firstSection = [
     { icon: icons.home, title: "Home" },
     { icon: icons.explore, title: "Explore" },
@@ -86,38 +86,73 @@ const Sidebar = ({ isBarsClicked }) => {
   return (
     <Fragment>
       {isBarsClicked ? (
-        <div className={styles.largeContainer}>
+        <div
+          className={classNames(
+            styles.largeContainer,
+            darkTheme && styles.dark
+          )}
+        >
           <div className={styles.section}>
             {firstSection.map((item, index) => (
-              <Button key={index} icon={item.icon} title={item.title} />
+              <Button
+                key={index}
+                icon={item.icon}
+                title={item.title}
+                darkTheme={darkTheme}
+              />
             ))}
           </div>
           <div className={styles.section}>
             {secondSection.map((item, index) => (
-              <Button key={index} icon={item.icon} title={item.title} />
+              <Button
+                key={index}
+                icon={item.icon}
+                title={item.title}
+                darkTheme={darkTheme}
+              />
             ))}
           </div>
           <div className={classNames(styles.section, styles.subscriptions)}>
             <h3>subscriptions</h3>
             {thirdSection.map((item, index) => (
-              <Button key={index} icon={item.icon} title={item.title} />
+              <Button
+                key={index}
+                icon={item.icon}
+                title={item.title}
+                darkTheme={darkTheme}
+              />
             ))}
           </div>
           <div className={styles.section}>
             <h3>explore</h3>
             {fourthSection.map((item, index) => (
-              <Button key={index} icon={item.icon} title={item.title} />
+              <Button
+                key={index}
+                icon={item.icon}
+                title={item.title}
+                darkTheme={darkTheme}
+              />
             ))}
           </div>
           <div className={styles.section}>
             <h3>more from youtube</h3>
             {fifthSection.map((item, index) => (
-              <Button key={index} icon={item.icon} title={item.title} />
+              <Button
+                key={index}
+                icon={item.icon}
+                title={item.title}
+                darkTheme={darkTheme}
+              />
             ))}
           </div>
           <div className={styles.section}>
             {sixthSection.map((item, index) => (
-              <Button key={index} icon={item.icon} title={item.title} />
+              <Button
+                key={index}
+                icon={item.icon}
+                title={item.title}
+                darkTheme={darkTheme}
+              />
             ))}
           </div>
           <div className={classNames(styles.section, styles.bottomLinks)}>
@@ -141,7 +176,12 @@ const Sidebar = ({ isBarsClicked }) => {
           </div>
         </div>
       ) : (
-        <div className={styles.smallContainer}>
+        <div
+          className={classNames(
+            styles.smallContainer,
+            darkTheme && styles.dark
+          )}
+        >
           {smallSidebarItems.map((item, index) => (
             <div key={index} className={styles.item}>
               <img src={item.icon} alt={item.title} />

@@ -26,8 +26,9 @@ const Countries = ({
       </div>
 
       <div className={styles.listContainer}>
-        {allCountries.map((country) => (
+        {allCountries.map((country, index) => (
           <button
+            key={index}
             onClick={() => {
               setLocation(country);
               setDrawerOpen(false);

@@ -15,8 +15,8 @@ function App() {
         setIsBarsClicked={setIsBarsClicked}
         isBarsClicked={isBarsClicked}
       />
-      <Sidebar isBarsClicked={isBarsClicked} />
-      <Home isBarsClicked={isBarsClicked} />
+      <Sidebar isBarsClicked={isBarsClicked} darkTheme={darkTheme} />
+      <Home isBarsClicked={isBarsClicked} darkTheme={darkTheme} />
     </div>
   );
 }

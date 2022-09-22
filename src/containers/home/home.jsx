@@ -5,7 +5,7 @@ import randomSentence from "random-sentence";
 import Categories from "../../components/categories/categories";
 import classNames from "classnames";
 
-const Home = ({ isBarsClicked }) => {
+const Home = ({ isBarsClicked, darkTheme }) => {
   const [videosArray, setVideosArray] = useState([]);
 
   useEffect(() => {
@@ -57,13 +57,14 @@ const Home = ({ isBarsClicked }) => {
     <div
       className={classNames(
         styles.container,
-        !isBarsClicked && styles.sidebarSmall
+        !isBarsClicked && styles.sidebarSmall,
+        darkTheme && styles.dark
       )}
     >
-      <Categories isBarsClicked={isBarsClicked} />
+      <Categories isBarsClicked={isBarsClicked} darkTheme={darkTheme} />
       <div className={styles.videoCards}>
         {videosArray.map((item, index) => (
-          <VideoCard key={index} {...item} />
+          <VideoCard key={index} {...item} darkTheme={darkTheme} />
         ))}
       </div>
     </div>

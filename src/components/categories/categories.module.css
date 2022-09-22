@@ -51,3 +51,8 @@
     border-radius: 50%;
 
 }
+
+.container.dark {
+    background-color: #202020;
+    border-top: 1px solid #373737;
+}

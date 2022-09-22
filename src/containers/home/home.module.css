@@ -16,3 +16,7 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     padding: 136px 16px 0 16px;
 }
+
+.container.dark {
+    background-color: #181818;
+}
