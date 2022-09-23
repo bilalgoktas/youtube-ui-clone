@@ -21,7 +21,7 @@
 .scrollContainer {
     width: 56px;
     height: 56px;
-    background: rgb(255, 255, 255, 0.9);
+    background: #ffffffe6;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -55,4 +55,12 @@
 .container.dark {
     background-color: #202020;
     border-top: 1px solid #373737;
+}
+
+.container.dark .scrollContainer {
+    background-color: #202020e6;
+}
+
+.container.dark .scrollContainer img {
+    filter: invert(1);
 }

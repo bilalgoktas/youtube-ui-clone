@@ -18,6 +18,7 @@ import leftArrow from "./assets/svg/left-arrow-icon.svg";
 import library from "./assets/svg/library-icon.svg";
 import like from "./assets/svg/like-icon.svg";
 import logo from "./assets/svg/logo-icon.svg";
+import logoDarkTheme from "./assets/svg/logo-icon-darktheme.svg";
 import mic from "./assets/svg/mic-icon.svg";
 import moon from "./assets/svg/moon-icon.svg";
 import movies from "./assets/svg/movies-icon.svg";
@@ -65,6 +66,7 @@ const icons = {
   library,
   like,
   logo,
+  logoDarkTheme,
   mic,
   moon,
   movies,

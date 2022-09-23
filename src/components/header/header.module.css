@@ -208,8 +208,36 @@
     border: 1px solid #303030;
 }
 
-.container.dark .barsIcon img , .container.dark form img  {
+.container.dark .barsIcon img , .container.dark form img, .container.dark .bellIcon, .container.dark .createCameraIcon  {
     filter: invert(1);
+}
+
+.container.dark .countryCode {
+    color: #AAAAAA;
+}
+
+.container.dark .searchContainer.focus {
+    border: 1px solid #1C62B9;
+}
+
+.container.dark input {
+    color: #ffffff;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.container.dark .micIcon {
+    background-color: #121212;
+}
+
+.container.dark .micIcon img{
+    filter: invert(1);
+ 
+}
+
+.container.dark .micIcon:hover{
+    background-color: #313131;
+
 }
 
 

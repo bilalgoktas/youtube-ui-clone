@@ -70,6 +70,7 @@
 
 .btn span {
     color: #030303;
+    font-weight: 400;
 
 }
 
@@ -114,7 +115,7 @@
     position: fixed;
     top: 56px;
     bottom: 0;
-    margin-top: 4px;
+    padding-top: 4px;
 }
 
 .smallContainer .item {
@@ -150,6 +151,10 @@
     color: #fff;
 }
 
+.largeContainer.dark .whiteIcon img {
+    filter: invert(1);
+}
+
 .largeContainer.dark .section {
     border-bottom: 1px solid #383838;
 }
@@ -157,4 +162,25 @@
 .largeContainer.dark::-webkit-scrollbar-thumb{
     border: 3px solid #202020;
 }
+
+.largeContainer.dark .section h3 ,.largeContainer.dark .bottomLinks a {
+    color: #AAAAAA;
+}
+
+.largeContainer.dark .bottomLinks p {
+    color: #717171;
+}
+
+.btn.dark:hover {
+    background-color: #383838;
+}
+
+.smallContainer.dark img {
+    filter: invert(1);
+}
+
+.smallContainer.dark span {
+    color: #ffffff;
+}
+
 

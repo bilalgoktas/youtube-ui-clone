@@ -30,7 +30,11 @@ const Header = ({
           />
         </button>
         <a href="" className={styles.logoIcon}>
-          <img src={icons.logo} alt="" />
+          {darkTheme ? (
+            <img src={icons.logoDarkTheme} alt="" />
+          ) : (
+            <img src={icons.logo} alt="" />
+          )}
           <span className={styles.countryCode}>{location.code}</span>
         </a>
       </div>
@@ -69,8 +73,9 @@ const Header = ({
             <img className={styles.searchIconRight} src={icons.search} alt="" />
           </button>
         </form>
-
-        <img className={styles.micIcon} src={icons.mic} alt="" />
+        <div className={styles.micIcon}>
+          <img src={icons.mic} alt="" />
+        </div>
       </div>
       <div className={styles.rightContainer}>
         <button className={styles.icons}>

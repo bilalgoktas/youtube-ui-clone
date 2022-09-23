@@ -69,7 +69,8 @@ const Sidebar = ({ isBarsClicked, darkTheme }) => {
   ];
 
   const secondQuickLinks = [
-    "Terms, Privacy",
+    "Terms",
+    "Privacy",
     "Policy & Safety",
     "How YouTube works",
     "Test new features",
@@ -92,7 +93,7 @@ const Sidebar = ({ isBarsClicked, darkTheme }) => {
             darkTheme && styles.dark
           )}
         >
-          <div className={styles.section}>
+          <div className={classNames(styles.section, styles.whiteIcon)}>
             {firstSection.map((item, index) => (
               <Button
                 key={index}
@@ -102,7 +103,7 @@ const Sidebar = ({ isBarsClicked, darkTheme }) => {
               />
             ))}
           </div>
-          <div className={styles.section}>
+          <div className={classNames(styles.section, styles.whiteIcon)}>
             {secondSection.map((item, index) => (
               <Button
                 key={index}
@@ -123,7 +124,7 @@ const Sidebar = ({ isBarsClicked, darkTheme }) => {
               />
             ))}
           </div>
-          <div className={styles.section}>
+          <div className={classNames(styles.section, styles.whiteIcon)}>
             <h3>explore</h3>
             {fourthSection.map((item, index) => (
               <Button
@@ -145,7 +146,7 @@ const Sidebar = ({ isBarsClicked, darkTheme }) => {
               />
             ))}
           </div>
-          <div className={styles.section}>
+          <div className={classNames(styles.section, styles.whiteIcon)}>
             {sixthSection.map((item, index) => (
               <Button
                 key={index}

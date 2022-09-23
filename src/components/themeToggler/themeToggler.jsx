@@ -24,7 +24,10 @@ const ThemeToggler = ({
         <span>Appearance</span>
       </div>
       <div className={styles.listContainer}>
-        <button>Use device theme</button>
+        <button>
+          <img className={styles.checkIcon} src={icons.check} />
+          <span>Use device theme</span>
+        </button>
         <button
           onClick={() => {
             setDarkTheme(true);

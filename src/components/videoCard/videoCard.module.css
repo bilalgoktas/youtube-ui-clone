@@ -70,5 +70,9 @@ margin: 0 6px;
     color: #fff;
 }
 
+.container.dark .details p {
+    color: #AAAAAA;
+}
+
 
 
