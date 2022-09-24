@@ -1,4 +1,4 @@
-export default [
+const categories = [
   "That",
   "Is",
   "One",
@@ -22,3 +22,5 @@ export default [
   "Sample",
   "Example",
 ];
+
+export default categories;

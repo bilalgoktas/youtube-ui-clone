@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import CategoryButton from "../categoryButton/categoryButton";
 import styles from "./categories.module.css";
-import allCategories from "../../data/allCategories";
+import categories from "../../data/categories";
 import icons from "../../icons.js";
 import classNames from "classnames";
 import { useContext } from "react";
@@ -55,11 +55,11 @@ const Categories = ({ isBarsClicked }) => {
         </div>
       )}
 
-      {allCategories.map((category, index) => (
+      {categories.map((category, index) => (
         <CategoryButton
           key={index}
           index={index}
-          length={allCategories.length}
+          length={categories.length}
           name={category}
         />
       ))}

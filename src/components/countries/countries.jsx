@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import React, { useContext } from "react";
 import { ThemeContext } from "../../contexts/ThemeContextProvider";
-import allCountries from "../../data/allCountries";
+import countries from "../../data/countries";
 import icons from "../../icons";
 import styles from "./countries.module.css";
 
@@ -28,7 +28,7 @@ const Countries = ({
       </div>
 
       <div className={styles.listContainer}>
-        {allCountries.map((country, index) => (
+        {countries.map((country, index) => (
           <button
             key={index}
             onClick={() => {
