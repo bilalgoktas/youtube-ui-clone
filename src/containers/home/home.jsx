@@ -8,7 +8,7 @@ import { useContext } from "react";
 import { ThemeContext } from "../../contexts/ThemeContextProvider";
 
 const Home = ({ isBarsClicked, darkTheme }) => {
-  const { isDarkTheme } = useContext(ThemeContext);
+  const { currentTheme } = useContext(ThemeContext);
 
   const [videosArray, setVideosArray] = useState([]);
 
@@ -62,7 +62,7 @@ const Home = ({ isBarsClicked, darkTheme }) => {
       className={classNames(
         styles.container,
         !isBarsClicked && styles.sidebarSmall,
-        isDarkTheme && styles.dark
+        currentTheme === "dark" && styles.dark
       )}
     >
       <Categories isBarsClicked={isBarsClicked} />

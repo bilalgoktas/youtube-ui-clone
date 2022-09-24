@@ -8,7 +8,7 @@ import { useContext } from "react";
 import { ThemeContext } from "../../contexts/ThemeContextProvider";
 
 const Categories = ({ isBarsClicked }) => {
-  const { isDarkTheme } = useContext(ThemeContext);
+  const { currentTheme } = useContext(ThemeContext);
 
   const [scrollPosition, setScrollPosition] = useState(0);
   const [scrollLength, setScrollLength] = useState(1);
@@ -32,7 +32,7 @@ const Categories = ({ isBarsClicked }) => {
       className={classNames(
         styles.container,
         !isBarsClicked && styles.sidebarSmall,
-        isDarkTheme && styles.dark
+        currentTheme === "dark" && styles.dark
       )}
     >
       {scrollPosition > 0 ? (

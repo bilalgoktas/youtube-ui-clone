@@ -4,11 +4,14 @@ import classNames from "classnames";
 import { ThemeContext } from "../../contexts/ThemeContextProvider";
 
 const CategoryButton = ({ index, length, name }) => {
-  const { isDarkTheme } = useContext(ThemeContext);
+  const { currentTheme } = useContext(ThemeContext);
   return (
     <div>
       <button
-        className={classNames(styles.btn, isDarkTheme && styles.dark)}
+        className={classNames(
+          styles.btn,
+          currentTheme === "dark" && styles.dark
+        )}
         style={Object.assign(
           index === 0 ? { marginLeft: 24 + "px" } : {},
           index === length - 1 ? { marginRight: 24 + "px" } : {}

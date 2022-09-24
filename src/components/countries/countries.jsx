@@ -11,7 +11,7 @@ const Countries = ({
   setLocation,
   location,
 }) => {
-  const { isDarkTheme } = useContext(ThemeContext);
+  const { currentTheme } = useContext(ThemeContext);
   return (
     <div className={styles.container}>
       <div className={styles.titleContainer}>

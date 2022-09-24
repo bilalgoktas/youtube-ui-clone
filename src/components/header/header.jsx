@@ -9,7 +9,7 @@ import ThemeToggler from "../themeToggler/themeToggler";
 import { ThemeContext } from "../../contexts/ThemeContextProvider";
 
 const Header = ({ setIsBarsClicked, isBarsClicked }) => {
-  const { isDarkTheme } = useContext(ThemeContext);
+  const { currentTheme } = useContext(ThemeContext);
   const [isFocused, setIsFocused] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [countriesOpen, setCountriesOpen] = useState(false);
@@ -17,7 +17,12 @@ const Header = ({ setIsBarsClicked, isBarsClicked }) => {
   const [themeTogglerOpen, setThemeTogglerOpen] = useState(false);
 
   return (
-    <div className={classNames(styles.container, isDarkTheme && styles.dark)}>
+    <div
+      className={classNames(
+        styles.container,
+        currentTheme === "dark" && styles.dark
+      )}
+    >
       <div className={styles.leftContainer}>
         <button className={styles.barsIcon}>
           <img
@@ -27,7 +32,7 @@ const Header = ({ setIsBarsClicked, isBarsClicked }) => {
           />
         </button>
         <a href="" className={styles.logoIcon}>
-          {isDarkTheme ? (
+          {currentTheme === "dark" ? (
             <img src={icons.logoDarkTheme} alt="" />
           ) : (
             <img src={icons.logo} alt="" />
@@ -55,7 +60,7 @@ const Header = ({ setIsBarsClicked, isBarsClicked }) => {
               className={classNames(
                 styles.inputContainer,
                 isFocused && styles.focus,
-                isDarkTheme && styles.dark
+                currentTheme === "dark" && styles.dark
               )}
             >
               <input

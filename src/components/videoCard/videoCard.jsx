@@ -12,9 +12,14 @@ const VideoCard = ({
   uploadedBefore,
   duration,
 }) => {
-  const { isDarkTheme } = useContext(ThemeContext);
+  const { currentTheme } = useContext(ThemeContext);
   return (
-    <div className={classNames(styles.container, isDarkTheme && styles.dark)}>
+    <div
+      className={classNames(
+        styles.container,
+        currentTheme === "dark" && styles.dark
+      )}
+    >
       <div className={styles.thumbnail}>
         <img src={thumbnail} alt="" />
         <p className={styles.duration}>{duration}</p>

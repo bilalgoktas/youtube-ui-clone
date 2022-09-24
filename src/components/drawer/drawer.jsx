@@ -9,7 +9,7 @@ const Drawer = ({
   setThemeTogglerOpen,
   location,
 }) => {
-  const { isDarkTheme } = useContext(ThemeContext);
+  const { currentTheme } = useContext(ThemeContext);
   const firstSection = [
     { icon: icons.yourChannel, title: "Your channel" },
     { icon: icons.youtubeStudio, title: "YouTube Studio" },

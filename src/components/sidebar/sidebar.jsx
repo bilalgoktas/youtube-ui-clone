@@ -5,9 +5,11 @@ import icons from "../../icons.js";
 import { ThemeContext } from "../../contexts/ThemeContextProvider";
 
 const Button = ({ icon, title }) => {
-  const { isDarkTheme } = useContext(ThemeContext);
+  const { currentTheme } = useContext(ThemeContext);
   return (
-    <button className={classNames(styles.btn, isDarkTheme && styles.dark)}>
+    <button
+      className={classNames(styles.btn, currentTheme === "dark" && styles.dark)}
+    >
       {" "}
       <img src={icon} alt={title} /> <span>{title}</span>
     </button>
@@ -15,7 +17,7 @@ const Button = ({ icon, title }) => {
 };
 
 const Sidebar = ({ isBarsClicked }) => {
-  const { isDarkTheme } = useContext(ThemeContext);
+  const { currentTheme } = useContext(ThemeContext);
   const firstSection = [
     { icon: icons.home, title: "Home" },
     { icon: icons.explore, title: "Explore" },
@@ -93,7 +95,7 @@ const Sidebar = ({ isBarsClicked }) => {
         <div
           className={classNames(
             styles.largeContainer,
-            isDarkTheme && styles.dark
+            currentTheme === "dark" && styles.dark
           )}
         >
           <div className={classNames(styles.section, styles.whiteIcon)}>
@@ -153,7 +155,7 @@ const Sidebar = ({ isBarsClicked }) => {
         <div
           className={classNames(
             styles.smallContainer,
-            isDarkTheme && styles.dark
+            currentTheme === "dark" && styles.dark
           )}
         >
           {smallSidebarItems.map((item, index) => (
