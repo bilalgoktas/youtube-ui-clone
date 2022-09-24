@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./videoCard.module.css";
 import classNames from "classnames";
+import { ThemeContext } from "../../contexts/ThemeContextProvider";
 
 const VideoCard = ({
   title,
@@ -10,10 +11,10 @@ const VideoCard = ({
   views,
   uploadedBefore,
   duration,
-  darkTheme,
 }) => {
+  const { isDarkTheme } = useContext(ThemeContext);
   return (
-    <div className={classNames(styles.container, darkTheme && styles.dark)}>
+    <div className={classNames(styles.container, isDarkTheme && styles.dark)}>
       <div className={styles.thumbnail}>
         <img src={thumbnail} alt="" />
         <p className={styles.duration}>{duration}</p>

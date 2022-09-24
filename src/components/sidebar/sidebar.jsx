@@ -1,18 +1,21 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useContext } from "react";
 import styles from "./sidebar.module.css";
 import classNames from "classnames";
 import icons from "../../icons.js";
+import { ThemeContext } from "../../contexts/ThemeContextProvider";
 
-const Button = ({ icon, title, darkTheme }) => {
+const Button = ({ icon, title }) => {
+  const { isDarkTheme } = useContext(ThemeContext);
   return (
-    <button className={classNames(styles.btn, darkTheme && styles.dark)}>
+    <button className={classNames(styles.btn, isDarkTheme && styles.dark)}>
       {" "}
       <img src={icon} alt={title} /> <span>{title}</span>
     </button>
   );
 };
 
-const Sidebar = ({ isBarsClicked, darkTheme }) => {
+const Sidebar = ({ isBarsClicked }) => {
+  const { isDarkTheme } = useContext(ThemeContext);
   const firstSection = [
     { icon: icons.home, title: "Home" },
     { icon: icons.explore, title: "Explore" },
@@ -90,70 +93,40 @@ const Sidebar = ({ isBarsClicked, darkTheme }) => {
         <div
           className={classNames(
             styles.largeContainer,
-            darkTheme && styles.dark
+            isDarkTheme && styles.dark
           )}
         >
           <div className={classNames(styles.section, styles.whiteIcon)}>
             {firstSection.map((item, index) => (
-              <Button
-                key={index}
-                icon={item.icon}
-                title={item.title}
-                darkTheme={darkTheme}
-              />
+              <Button key={index} icon={item.icon} title={item.title} />
             ))}
           </div>
           <div className={classNames(styles.section, styles.whiteIcon)}>
             {secondSection.map((item, index) => (
-              <Button
-                key={index}
-                icon={item.icon}
-                title={item.title}
-                darkTheme={darkTheme}
-              />
+              <Button key={index} icon={item.icon} title={item.title} />
             ))}
           </div>
           <div className={classNames(styles.section, styles.subscriptions)}>
             <h3>subscriptions</h3>
             {thirdSection.map((item, index) => (
-              <Button
-                key={index}
-                icon={item.icon}
-                title={item.title}
-                darkTheme={darkTheme}
-              />
+              <Button key={index} icon={item.icon} title={item.title} />
             ))}
           </div>
           <div className={classNames(styles.section, styles.whiteIcon)}>
             <h3>explore</h3>
             {fourthSection.map((item, index) => (
-              <Button
-                key={index}
-                icon={item.icon}
-                title={item.title}
-                darkTheme={darkTheme}
-              />
+              <Button key={index} icon={item.icon} title={item.title} />
             ))}
           </div>
           <div className={styles.section}>
             <h3>more from youtube</h3>
             {fifthSection.map((item, index) => (
-              <Button
-                key={index}
-                icon={item.icon}
-                title={item.title}
-                darkTheme={darkTheme}
-              />
+              <Button key={index} icon={item.icon} title={item.title} />
             ))}
           </div>
           <div className={classNames(styles.section, styles.whiteIcon)}>
             {sixthSection.map((item, index) => (
-              <Button
-                key={index}
-                icon={item.icon}
-                title={item.title}
-                darkTheme={darkTheme}
-              />
+              <Button key={index} icon={item.icon} title={item.title} />
             ))}
           </div>
           <div className={classNames(styles.section, styles.bottomLinks)}>
@@ -180,7 +153,7 @@ const Sidebar = ({ isBarsClicked, darkTheme }) => {
         <div
           className={classNames(
             styles.smallContainer,
-            darkTheme && styles.dark
+            isDarkTheme && styles.dark
           )}
         >
           {smallSidebarItems.map((item, index) => (

@@ -1,5 +1,6 @@
 import classNames from "classnames";
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "../../contexts/ThemeContextProvider";
 import allCountries from "../../data/allCountries";
 import icons from "../../icons";
 import styles from "./countries.module.css";
@@ -10,6 +11,7 @@ const Countries = ({
   setLocation,
   location,
 }) => {
+  const { isDarkTheme } = useContext(ThemeContext);
   return (
     <div className={styles.container}>
       <div className={styles.titleContainer}>

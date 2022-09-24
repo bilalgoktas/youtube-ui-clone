@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "../../contexts/ThemeContextProvider";
 import icons from "../../icons";
 import styles from "./drawer.module.css";
 
@@ -8,6 +9,7 @@ const Drawer = ({
   setThemeTogglerOpen,
   location,
 }) => {
+  const { isDarkTheme } = useContext(ThemeContext);
   const firstSection = [
     { icon: icons.yourChannel, title: "Your channel" },
     { icon: icons.youtubeStudio, title: "YouTube Studio" },

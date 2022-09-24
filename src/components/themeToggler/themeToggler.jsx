@@ -1,14 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import icons from "../../icons";
 import styles from "./themeToggler.module.css";
 import classNames from "classnames";
+import { ThemeContext } from "../../contexts/ThemeContextProvider";
 
-const ThemeToggler = ({
-  setThemeTogglerOpen,
-  setDrawerOpen,
-  setDarkTheme,
-  darkTheme,
-}) => {
+const ThemeToggler = ({ setThemeTogglerOpen, setDrawerOpen }) => {
+  const { isDarkTheme, setIsDarkTheme } = useContext(ThemeContext);
+
   return (
     <div className={styles.container}>
       <div className={styles.titleContainer}>
@@ -30,15 +28,15 @@ const ThemeToggler = ({
         </button>
         <button
           onClick={() => {
-            setDarkTheme(true);
             setDrawerOpen(false);
             setThemeTogglerOpen(false);
+            setIsDarkTheme(true);
           }}
         >
           <img
             className={classNames(
               styles.checkIcon,
-              darkTheme && styles.checked
+              isDarkTheme && styles.checked
             )}
             src={icons.check}
           />
@@ -46,7 +44,7 @@ const ThemeToggler = ({
         </button>
         <button
           onClick={() => {
-            setDarkTheme(false);
+            setIsDarkTheme(false);
             setDrawerOpen(false);
             setThemeTogglerOpen(false);
           }}
@@ -54,7 +52,7 @@ const ThemeToggler = ({
           <img
             className={classNames(
               styles.checkIcon,
-              !darkTheme && styles.checked
+              !isDarkTheme && styles.checked
             )}
             src={icons.check}
           />

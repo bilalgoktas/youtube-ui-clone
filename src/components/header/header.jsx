@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import styles from "./header.module.css";
 import profilePhoto from "../../assets/img/profile-photo.jpeg";
 import icons from "../../icons.js";
@@ -6,13 +6,10 @@ import classNames from "classnames";
 import Drawer from "../drawer/drawer";
 import Countries from "../countries/countries";
 import ThemeToggler from "../themeToggler/themeToggler";
+import { ThemeContext } from "../../contexts/ThemeContextProvider";
 
-const Header = ({
-  setIsBarsClicked,
-  isBarsClicked,
-  setDarkTheme,
-  darkTheme,
-}) => {
+const Header = ({ setIsBarsClicked, isBarsClicked }) => {
+  const { isDarkTheme } = useContext(ThemeContext);
   const [isFocused, setIsFocused] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [countriesOpen, setCountriesOpen] = useState(false);
@@ -20,7 +17,7 @@ const Header = ({
   const [themeTogglerOpen, setThemeTogglerOpen] = useState(false);
 
   return (
-    <div className={classNames(styles.container, darkTheme && styles.dark)}>
+    <div className={classNames(styles.container, isDarkTheme && styles.dark)}>
       <div className={styles.leftContainer}>
         <button className={styles.barsIcon}>
           <img
@@ -30,7 +27,7 @@ const Header = ({
           />
         </button>
         <a href="" className={styles.logoIcon}>
-          {darkTheme ? (
+          {isDarkTheme ? (
             <img src={icons.logoDarkTheme} alt="" />
           ) : (
             <img src={icons.logo} alt="" />
@@ -58,7 +55,7 @@ const Header = ({
               className={classNames(
                 styles.inputContainer,
                 isFocused && styles.focus,
-                darkTheme && styles.dark
+                isDarkTheme && styles.dark
               )}
             >
               <input
@@ -124,8 +121,6 @@ const Header = ({
         <ThemeToggler
           setDrawerOpen={setDrawerOpen}
           setThemeTogglerOpen={setThemeTogglerOpen}
-          setDarkTheme={setDarkTheme}
-          darkTheme={darkTheme}
         />
       )}
     </div>

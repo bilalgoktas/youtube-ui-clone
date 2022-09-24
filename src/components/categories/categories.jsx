@@ -4,8 +4,12 @@ import styles from "./categories.module.css";
 import allCategories from "../../data/allCategories";
 import icons from "../../icons.js";
 import classNames from "classnames";
+import { useContext } from "react";
+import { ThemeContext } from "../../contexts/ThemeContextProvider";
 
-const Categories = ({ isBarsClicked, darkTheme }) => {
+const Categories = ({ isBarsClicked }) => {
+  const { isDarkTheme } = useContext(ThemeContext);
+
   const [scrollPosition, setScrollPosition] = useState(0);
   const [scrollLength, setScrollLength] = useState(1);
 
@@ -28,7 +32,7 @@ const Categories = ({ isBarsClicked, darkTheme }) => {
       className={classNames(
         styles.container,
         !isBarsClicked && styles.sidebarSmall,
-        darkTheme && styles.dark
+        isDarkTheme && styles.dark
       )}
     >
       {scrollPosition > 0 ? (
@@ -57,7 +61,6 @@ const Categories = ({ isBarsClicked, darkTheme }) => {
           index={index}
           length={allCategories.length}
           name={category}
-          darkTheme={darkTheme}
         />
       ))}
     </div>
