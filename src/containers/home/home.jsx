@@ -47,11 +47,12 @@ const Home = ({ isBarsClicked, darkTheme }) => {
       uploadedBefore: `${randomNumber(1, 7)} ${randomStringFromArray(
         time
       )} ago`,
-      duration: `${randomNumber(0, 59).toLocaleString("en-US", {
-        minimumIntegerDigits: 2,
-      })}:${randomNumber(0, 59).toLocaleString("en-US", {
-        minimumIntegerDigits: 2,
-      })}`,
+      duration: `${randomNumber(0, 59)}:${randomNumber(0, 59).toLocaleString(
+        "en-US",
+        {
+          minimumIntegerDigits: 2,
+        }
+      )}`,
     };
 
     videos.push(video);
