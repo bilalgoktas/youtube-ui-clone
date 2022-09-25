@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import React, { useContext } from "react";
 import { ThemeContext } from "../../contexts/ThemeContextProvider";
 import icons from "../../icons";
@@ -25,7 +26,9 @@ const Drawer = ({
   const thirdSection = [
     {
       icon: icons.moon,
-      title: "Appearance: Light",
+      title: `Appearance: ${
+        currentTheme.charAt(0).toUpperCase() + currentTheme.slice(1)
+      }`,
       onClick: () => {
         setThemeTogglerOpen(true);
         setDrawerOpen(false);
@@ -56,7 +59,12 @@ const Drawer = ({
   ];
 
   return (
-    <div className={styles.container}>
+    <div
+      className={classNames(
+        styles.container,
+        currentTheme === "dark" && styles.dark
+      )}
+    >
       <div className={styles.manage}>
         <img src={icons.profilePhoto} alt="profile photo" />
         <div>

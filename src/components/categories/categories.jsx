@@ -1,10 +1,9 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, useContext } from "react";
 import CategoryButton from "../categoryButton/categoryButton";
 import styles from "./categories.module.css";
 import categories from "../../data/categories";
 import icons from "../../icons.js";
 import classNames from "classnames";
-import { useContext } from "react";
 import { ThemeContext } from "../../contexts/ThemeContextProvider";
 
 const Categories = ({ isBarsClicked }) => {

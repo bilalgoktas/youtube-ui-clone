@@ -50,7 +50,7 @@
 }
 
 .buttonsContainer::-webkit-scrollbar-track {
-    background-color: white;
+    background-color: transparent;
 }
 
 .buttonsContainer::-webkit-scrollbar-thumb {
@@ -92,4 +92,35 @@
     width: 24px;
     height: 24px;
     margin-right: 16px;
+}
+
+.container.dark {
+    border-left: 1px solid #383838;
+    border-right: 1px solid #383838;
+}
+
+.container.dark .manage {
+    background-color: #202020;
+    border-bottom: 1px solid #383838;
+    color: #ffffff;
+}
+
+.container.dark .manage p {
+    color:#3ea6ff
+}
+
+.container.dark .buttonsContainer {
+background-color: #202020FA;
+}
+
+.container.dark button img {
+    filter: invert(1);
+}
+
+.container.dark button span {
+    color: #ffffff;
+}
+
+.container.dark .section {
+    border-bottom: 1px solid #383838;
 }

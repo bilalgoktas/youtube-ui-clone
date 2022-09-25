@@ -2,14 +2,9 @@ import React, { createContext, useEffect, useState } from "react";
 
 export const ThemeContext = createContext(null);
 
-export const Themes = {
-  Light: "light",
-  Dark: "dark",
-};
-
 export const ThemeContextProvider = ({ children }) => {
   const [currentTheme, setCurrentTheme] = useState(
-    localStorage.getItem("currentTheme" || Themes.Light)
+    localStorage.getItem("currentTheme") || "light"
   );
 
   useEffect(() => {
