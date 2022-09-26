@@ -17,7 +17,7 @@
 }
 
 .container::-webkit-scrollbar-track {
-    background-color: white;
+    background-color: transparent;
 }
 
 .container::-webkit-scrollbar-thumb {
@@ -86,4 +86,28 @@
 
 .checkIcon.checked {
     visibility: visible;
+}
+
+.container.dark {
+    background-color: #202020;
+    border-right: 1px solid #383838;
+    border-left: 1px solid #383838;
+}
+
+.container button {
+    background-color: #202020;
+    color: #ffffff;
+}
+
+.container.dark button img {
+    filter: invert(1);
+}
+
+.container.dark .titleContainer {
+    border-bottom: 1px solid #383838;
+    color: #ffffff;
+}
+
+.container.dark .titleContainer img {
+    filter: invert(1);
 }

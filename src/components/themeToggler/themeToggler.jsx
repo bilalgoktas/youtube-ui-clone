@@ -8,7 +8,12 @@ const ThemeToggler = ({ setThemeTogglerOpen, setDrawerOpen }) => {
   const { currentTheme, setCurrentTheme } = useContext(ThemeContext);
 
   return (
-    <div className={styles.container}>
+    <div
+      className={classNames(
+        styles.container,
+        currentTheme === "dark" && styles.dark
+      )}
+    >
       <div className={styles.titleContainer}>
         <button
           className={styles.backButton}
@@ -22,6 +27,7 @@ const ThemeToggler = ({ setThemeTogglerOpen, setDrawerOpen }) => {
         <span>Appearance</span>
       </div>
       <div className={styles.listContainer}>
+        <p>Settings apply to this browser only</p>
         <button>
           <img className={styles.checkIcon} src={icons.check} />
           <span>Use device theme</span>

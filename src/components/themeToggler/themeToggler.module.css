@@ -6,29 +6,9 @@
     right: 85px;
     top: 10px;
     z-index: 1000;
-    overflow-y: scroll;
-    overscroll-behavior: contain;
     border-right: 1px solid #f4f4f4;
     border-left: 1px solid #f4f4f4;
 }
-
-.container::-webkit-scrollbar {
-    width: 8px;
-}
-
-.container::-webkit-scrollbar-track {
-    background-color: white;
-}
-
-.container::-webkit-scrollbar-thumb {
-    visibility: hidden;
-    height: 56px;
-    background-color: rgb(138, 138, 138);
-  }
-
-.container:hover::-webkit-scrollbar-thumb {
-    visibility: visible;
-  }
 
 .titleContainer {
     height: 48px;
@@ -56,6 +36,20 @@
     padding: 8px 0;
 }
 
+.listContainer p {
+    width: 100%;
+    height: 40px;
+    padding: 0 36px 0 16px;
+    text-align: start;
+    background-color: white;
+    border: none;
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: #606060;
+}
+
 .listContainer button {
     width: 100%;
     height: 40px;
@@ -71,7 +65,7 @@
 }
 
 .listContainer button:hover {
-    background-color: gray;
+    background-color: #f0f0f0;
 }
 
 .listContainer button span {
@@ -86,4 +80,37 @@
 
 .checkIcon.checked {
     visibility: visible;
+}
+
+.container.dark {
+    background-color: #202020;
+    border-right: 1px solid #383838;
+    border-left: 1px solid #383838;
+}
+
+.container.dark p {
+    background-color: #202020;
+    color: #aaaaaa;
+}
+
+.container.dark button {
+    background-color: #202020;
+    color: #ffffff;
+}
+
+.container.dark button:hover {
+    background-color: #303030;
+}
+
+.container.dark button img {
+    filter: invert(1);
+}
+
+.container.dark .titleContainer {
+    border-bottom: 1px solid #383838;
+    color: #ffffff;
+}
+
+.container.dark .titleContainer img {
+    filter: invert(1);
 }

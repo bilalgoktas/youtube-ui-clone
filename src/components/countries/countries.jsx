@@ -13,7 +13,12 @@ const Countries = ({
 }) => {
   const { currentTheme } = useContext(ThemeContext);
   return (
-    <div className={styles.container}>
+    <div
+      className={classNames(
+        styles.container,
+        currentTheme === "dark" && styles.dark
+      )}
+    >
       <div className={styles.titleContainer}>
         <button
           className={styles.backButton}
