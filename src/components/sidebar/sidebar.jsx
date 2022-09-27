@@ -1,4 +1,4 @@
-import React, { Fragment, useContext } from "react";
+import React, { useContext } from "react";
 import styles from "./sidebar.module.css";
 import classNames from "classnames";
 
@@ -15,11 +15,15 @@ import {
   smallSidebarItems,
 } from "../../data/sidebarLinks";
 
-const Button = ({ icon, title }) => {
+const Button = ({ icon, title, activeLink }) => {
   const { currentTheme } = useContext(ThemeContext);
   return (
     <button
-      className={classNames(styles.btn, currentTheme === "dark" && styles.dark)}
+      className={classNames(
+        styles.btn,
+        currentTheme === "dark" && styles.dark,
+        activeLink === title && styles.active
+      )}
     >
       {" "}
       <img src={icon} alt={title} /> <span>{title}</span>
@@ -27,11 +31,11 @@ const Button = ({ icon, title }) => {
   );
 };
 
-const Sidebar = ({ isBarsClicked }) => {
+const Sidebar = ({ isBarsClicked, activeLink, setActiveLink }) => {
   const { currentTheme } = useContext(ThemeContext);
 
   return (
-    <Fragment>
+    <>
       {isBarsClicked ? (
         <div
           className={classNames(
@@ -41,7 +45,13 @@ const Sidebar = ({ isBarsClicked }) => {
         >
           <div className={classNames(styles.section, styles.whiteIcon)}>
             {firstSection.map((item, index) => (
-              <Button key={index} icon={item.icon} title={item.title} />
+              <Button
+                key={index}
+                icon={item.icon}
+                title={item.title}
+                activeLink={activeLink}
+                setActiveLink={setActiveLink}
+              />
             ))}
           </div>
           <div className={classNames(styles.section, styles.whiteIcon)}>
@@ -107,7 +117,7 @@ const Sidebar = ({ isBarsClicked }) => {
           ))}
         </div>
       )}
-    </Fragment>
+    </>
   );
 };
 

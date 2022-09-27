@@ -6,13 +6,18 @@ import ThemeContextProvider from "./contexts/ThemeContextProvider";
 
 function App() {
   const [isBarsClicked, setIsBarsClicked] = useState(true);
+  const [activeLink, setActiveLink] = useState("Home");
   return (
     <ThemeContextProvider>
       <Header
         setIsBarsClicked={setIsBarsClicked}
         isBarsClicked={isBarsClicked}
       />
-      <Sidebar isBarsClicked={isBarsClicked} />
+      <Sidebar
+        isBarsClicked={isBarsClicked}
+        activeLink={activeLink}
+        setActiveLink={setActiveLink}
+      />
       <Home isBarsClicked={isBarsClicked} />
     </ThemeContextProvider>
   );

@@ -57,8 +57,16 @@
 
 }
 
+.btn.active {
+    background-color: #e5e5e5;
+}
+
+.btn.active:hover {
+    background-color: #d9d9d9;
+}
+
 .btn:hover {
-    background-color: gray;
+    background-color: #f0f0f0;
     cursor: pointer;
 }
 
@@ -173,6 +181,14 @@
 
 .btn.dark:hover {
     background-color: #383838;
+}
+
+.btn.dark.active {
+    background-color: #383838;
+}
+
+.btn.dark.active:hover {
+    background-color: #4c4c4c
 }
 
 .smallContainer.dark img {

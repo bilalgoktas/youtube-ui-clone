@@ -5,15 +5,15 @@
     right: 85px;
     top: 10px;
     z-index: 1000;
-    border-right: 1px solid gray;
-    border-left: 1px solid gray;
+    border-right: 1px solid #e5e5e5;
+    border-left: 1px solid #e5e5e5;
 }
 
 .manage {
     height: 82px;
     display: flex;
     padding: 16px;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid #e5e5e5;
     background-color: white;
 }
 
@@ -85,7 +85,7 @@
 }
 
 .section button:hover {
-    background-color: gray;
+    background-color: #f0f0f0;
 }
 
 .section button img {
@@ -111,6 +111,10 @@
 
 .container.dark .buttonsContainer {
 background-color: #202020FA;
+}
+
+.container.dark button:hover {
+    background-color: #303030 ;
 }
 
 .container.dark button img {

@@ -71,7 +71,7 @@
 }
 
 .listContainer button:hover {
-    background-color: gray;
+    background-color: #f0f0f0;
 }
 
 .listContainer button span {
@@ -94,9 +94,13 @@
     border-left: 1px solid #383838;
 }
 
-.container button {
+.container.dark button {
     background-color: #202020;
     color: #ffffff;
+}
+
+.container.dark button:hover {
+    background-color: #303030;
 }
 
 .container.dark button img {
