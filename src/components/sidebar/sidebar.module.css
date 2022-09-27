@@ -134,6 +134,11 @@
     flex-direction: column;
     align-items: center;
     box-sizing: content-box;
+    cursor: pointer;
+}
+
+.smallContainer .item:hover {
+    background-color: #f2f2f2;
 }
 
 .smallContainer .item img {
@@ -189,6 +194,10 @@
 
 .btn.dark.active:hover {
     background-color: #4c4c4c
+}
+
+.smallContainer.dark .item:hover {
+    background-color: #383838;
 }
 
 .smallContainer.dark img {
