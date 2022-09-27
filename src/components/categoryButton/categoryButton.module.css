@@ -7,6 +7,7 @@
     cursor: pointer;
     font-size: 14px;
     transition: .3s all;
+    min-width: max-content;
 }
 
 .btn:hover {
