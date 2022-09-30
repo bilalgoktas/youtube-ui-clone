@@ -1,15 +1,14 @@
 import React, { useContext, useState } from "react";
 import styles from "./header.module.css";
-import profilePhoto from "../../assets/img/profile-photo.jpeg";
-import icons from "../../icons.js";
+import icons from "../../data/icons";
 import classNames from "classnames";
 import Drawer from "../drawer/drawer";
 import Countries from "../countries/countries";
 import ThemeToggler from "../themeToggler/themeToggler";
-import { ThemeContext } from "../../contexts/ThemeContextProvider";
+import { AppContext } from "../../contexts/AppContextProvider";
 
 const Header = ({ setIsBarsClicked, isBarsClicked }) => {
-  const { currentTheme } = useContext(ThemeContext);
+  const { currentTheme } = useContext(AppContext);
   const [isFocused, setIsFocused] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [countriesOpen, setCountriesOpen] = useState(false);
@@ -28,14 +27,14 @@ const Header = ({ setIsBarsClicked, isBarsClicked }) => {
           <img
             onClick={() => setIsBarsClicked(!isBarsClicked)}
             src={icons.bars}
-            alt=""
+            alt="menu bars icon"
           />
         </button>
-        <a href="" className={styles.logoIcon}>
+        <a href="/" className={styles.logoIcon}>
           {currentTheme === "dark" ? (
-            <img src={icons.logoDarkTheme} alt="" />
+            <img src={icons.logoDarkTheme} alt="youtube logo" />
           ) : (
-            <img src={icons.logo} alt="" />
+            <img src={icons.logo} alt="youtube logo" />
           )}
           <span className={styles.countryCode}>{location.code}</span>
         </a>
@@ -54,7 +53,7 @@ const Header = ({ setIsBarsClicked, isBarsClicked }) => {
                 isFocused && styles.show
               )}
               src={icons.search}
-              alt=""
+              alt="search icon"
             />
             <div
               className={classNames(
@@ -76,7 +75,7 @@ const Header = ({ setIsBarsClicked, isBarsClicked }) => {
           </button>
         </form>
         <div className={styles.micIcon}>
-          <img src={icons.mic} alt="" />
+          <img src={icons.mic} alt="voice texting" />
         </div>
       </div>
       <div className={styles.rightContainer}>
@@ -85,25 +84,32 @@ const Header = ({ setIsBarsClicked, isBarsClicked }) => {
           <img
             className={styles.createCameraIcon}
             src={icons.createCamera}
-            alt=""
+            alt="create video"
           />
         </button>
         <button className={styles.icons}>
-          <img className={styles.bellIcon} src={icons.bell} alt="" />
+          <img
+            className={styles.bellIcon}
+            src={icons.bell}
+            alt="notifications"
+          />
         </button>
         <button
           className={styles.photo}
           onClick={() => {
-            {
-              countriesOpen | themeTogglerOpen | drawerOpen
-                ? setDrawerOpen(false)
-                : setDrawerOpen(true);
-            }
+            countriesOpen | themeTogglerOpen | drawerOpen
+              ? setDrawerOpen(false)
+              : setDrawerOpen(true);
+
             setCountriesOpen(false);
             setThemeTogglerOpen(false);
           }}
         >
-          <img className={styles.profilePhoto} src={profilePhoto} alt="" />
+          <img
+            className={styles.profilePhoto}
+            src={icons.profilePhoto}
+            alt=""
+          />
         </button>
       </div>
       {drawerOpen && (

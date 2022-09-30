@@ -45,42 +45,7 @@
     color: #606060;
 }
 
-.btn {
-    width: 100%;
-    height: 40px;
-    padding: 0 24px;
-    display: flex;
-    align-items: center;
-    border: none;
-    background-color: transparent;
-    font-size: 14px;
 
-}
-
-.btn.active {
-    background-color: #e5e5e5;
-}
-
-.btn.active:hover {
-    background-color: #d9d9d9;
-}
-
-.btn:hover {
-    background-color: #f0f0f0;
-    cursor: pointer;
-}
-
-.btn img {
-    width: 24px;
-    height: 24px;
-    margin-right: 24px;
-}
-
-.btn span {
-    color: #030303;
-    font-weight: 400;
-
-}
 
 .subscriptions {
     padding: 8px 0;
@@ -160,9 +125,7 @@
     background-color: #202020;
 }
 
-.btn.dark span {
-    color: #fff;
-}
+
 
 .largeContainer.dark .whiteIcon img {
     filter: invert(1);
@@ -182,18 +145,6 @@
 
 .largeContainer.dark .bottomLinks p {
     color: #717171;
-}
-
-.btn.dark:hover {
-    background-color: #383838;
-}
-
-.btn.dark.active {
-    background-color: #383838;
-}
-
-.btn.dark.active:hover {
-    background-color: #4c4c4c
 }
 
 .smallContainer.dark .item:hover {

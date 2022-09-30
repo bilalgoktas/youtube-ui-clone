@@ -1,6 +1,5 @@
 .container {
     width: 290px;
-    /* height: calc(100vh- 10px); */
     position: fixed;
     right: 85px;
     top: 10px;

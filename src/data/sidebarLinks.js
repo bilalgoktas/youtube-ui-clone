@@ -1,4 +1,4 @@
-import icons from "../icons";
+import icons from "../data/icons";
 
 export const firstSection = [
   { icon: icons.home, title: "Home" },

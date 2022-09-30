@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
-import icons from "../../icons";
+import icons from "../../data/icons";
 import styles from "./themeToggler.module.css";
 import classNames from "classnames";
-import { ThemeContext } from "../../contexts/ThemeContextProvider";
+import { AppContext } from "../../contexts/AppContextProvider";
 
 const ThemeToggler = ({ setThemeTogglerOpen, setDrawerOpen }) => {
-  const { currentTheme, setCurrentTheme } = useContext(ThemeContext);
+  const { currentTheme, setCurrentTheme } = useContext(AppContext);
 
   return (
     <div
@@ -22,14 +22,18 @@ const ThemeToggler = ({ setThemeTogglerOpen, setDrawerOpen }) => {
             setThemeTogglerOpen(false);
           }}
         >
-          <img src={icons.backArrow} />
+          <img src={icons.backArrow} alt="back" />
         </button>
         <span>Appearance</span>
       </div>
       <div className={styles.listContainer}>
         <p>Settings apply to this browser only</p>
         <button>
-          <img className={styles.checkIcon} src={icons.check} />
+          <img
+            className={styles.checkIcon}
+            src={icons.check}
+            alt="selected theme"
+          />
           <span>Use device theme</span>
         </button>
         <button
@@ -45,6 +49,7 @@ const ThemeToggler = ({ setThemeTogglerOpen, setDrawerOpen }) => {
               currentTheme === "dark" && styles.checked
             )}
             src={icons.check}
+            alt="selected theme"
           />
           <span>Dark theme</span>
         </button>
@@ -61,6 +66,7 @@ const ThemeToggler = ({ setThemeTogglerOpen, setDrawerOpen }) => {
               currentTheme === "light" && styles.checked
             )}
             src={icons.check}
+            alt="selected theme"
           />
           <span>Light theme</span>
         </button>

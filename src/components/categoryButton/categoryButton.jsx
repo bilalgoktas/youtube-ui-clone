@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import styles from "./categoryButton.module.css";
 import classNames from "classnames";
-import { ThemeContext } from "../../contexts/ThemeContextProvider";
+import { AppContext } from "../../contexts/AppContextProvider";
 
 const CategoryButton = ({ index, length, name }) => {
-  const { currentTheme } = useContext(ThemeContext);
+  const { currentTheme } = useContext(AppContext);
   return (
     <div>
       <button

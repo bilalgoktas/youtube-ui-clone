@@ -2,12 +2,12 @@ import React, { useRef, useState, useEffect, useContext } from "react";
 import CategoryButton from "../categoryButton/categoryButton";
 import styles from "./categories.module.css";
 import categories from "../../data/categories";
-import icons from "../../icons.js";
+import icons from "../../data/icons";
 import classNames from "classnames";
-import { ThemeContext } from "../../contexts/ThemeContextProvider";
+import { AppContext } from "../../contexts/AppContextProvider";
 
 const Categories = ({ isBarsClicked }) => {
-  const { currentTheme } = useContext(ThemeContext);
+  const { currentTheme, categoriesToDraw } = useContext(AppContext);
 
   const [scrollPosition, setScrollPosition] = useState(0);
   const [scrollLength, setScrollLength] = useState(1);
@@ -15,7 +15,6 @@ const Categories = ({ isBarsClicked }) => {
   useEffect(() => {
     setScrollLength(ref.current.scrollWidth - ref.current.clientWidth);
     setScrollPosition(ref.current.scrollLeft);
-    console.log(scrollPosition);
   }, [isBarsClicked]);
 
   const ref = useRef();
@@ -42,7 +41,11 @@ const Categories = ({ isBarsClicked }) => {
             !isBarsClicked && styles.sidebarSmall
           )}
         >
-          <img onClick={() => scroll(-150)} src={icons.leftArrow} alt="" />
+          <img
+            onClick={() => scroll(-150)}
+            src={icons.leftArrow}
+            alt="left arrow icon"
+          />
         </div>
       ) : (
         ""
@@ -50,11 +53,15 @@ const Categories = ({ isBarsClicked }) => {
 
       {scrollPosition < scrollLength && (
         <div className={classNames(styles.scrollContainer, styles.next)}>
-          <img onClick={() => scroll(150)} src={icons.rightArrow} alt="" />
+          <img
+            onClick={() => scroll(150)}
+            src={icons.rightArrow}
+            alt="right arrow icon"
+          />
         </div>
       )}
 
-      {categories.map((category, index) => (
+      {categoriesToDraw.map((category, index) => (
         <CategoryButton
           key={index}
           index={index}

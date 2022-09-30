@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import React, { useContext } from "react";
-import { ThemeContext } from "../../contexts/ThemeContextProvider";
-import icons from "../../icons";
+import { AppContext } from "../../contexts/AppContextProvider";
+import icons from "../../data/icons";
 import styles from "./drawer.module.css";
 
 const Drawer = ({
@@ -10,7 +10,7 @@ const Drawer = ({
   setThemeTogglerOpen,
   location,
 }) => {
-  const { currentTheme } = useContext(ThemeContext);
+  const { currentTheme } = useContext(AppContext);
   const firstSection = [
     { icon: icons.yourChannel, title: "Your channel" },
     { icon: icons.youtubeStudio, title: "YouTube Studio" },
@@ -66,7 +66,7 @@ const Drawer = ({
       )}
     >
       <div className={styles.manage}>
-        <img src={icons.profilePhoto} alt="profile photo" />
+        <img src={icons.profilePhoto} alt="profile" />
         <div>
           <h3>Bilal Goktas</h3>
           <p>Manage your Google Account</p>
@@ -76,7 +76,7 @@ const Drawer = ({
         <div className={styles.section}>
           {firstSection.map((item, index) => (
             <button key={index}>
-              <img src={item.icon} />
+              <img src={item.icon} alt={item.title} />
               <span>{item.title}</span>
             </button>
           ))}
@@ -84,7 +84,7 @@ const Drawer = ({
         <div className={styles.section}>
           {secondSection.map((item, index) => (
             <button key={index}>
-              <img src={item.icon} />
+              <img src={item.icon} alt={item.title} />
               <span>{item.title}</span>
             </button>
           ))}
@@ -92,7 +92,7 @@ const Drawer = ({
         <div className={styles.section}>
           {thirdSection.map((item, index) => (
             <button key={index} onClick={item.onClick}>
-              <img src={item.icon} />
+              <img src={item.icon} alt={item.title} />
               <span>{item.title}</span>
             </button>
           ))}
@@ -100,7 +100,7 @@ const Drawer = ({
         <div className={styles.section}>
           {fourthSection.map((item, index) => (
             <button key={index}>
-              <img src={item.icon} />
+              <img src={item.icon} alt={item.title} />
               <span>{item.title}</span>
             </button>
           ))}
@@ -108,13 +108,12 @@ const Drawer = ({
         <div className={styles.section}>
           {fifthSection.map((item, index) => (
             <button key={index}>
-              <img src={item.icon} />
+              <img src={item.icon} alt={item.title} />
               <span>{item.title}</span>
             </button>
           ))}
         </div>
       </div>
-      {/* <button onClick={()=>{setCountriesOpen(true); setDrawerOpen(false)}}>Location</button> */}
     </div>
   );
 };

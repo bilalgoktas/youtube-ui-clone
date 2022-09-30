@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import Header from "./components/header/header";
 import Sidebar from "./components/sidebar/sidebar";
 import Home from "./containers/home/home";
-import ThemeContextProvider from "./contexts/ThemeContextProvider";
+import AppContextProvider from "./contexts/AppContextProvider";
 
 function App() {
   const [isBarsClicked, setIsBarsClicked] = useState(true);
   const [activeLink, setActiveLink] = useState("Home");
   return (
-    <ThemeContextProvider>
+    <AppContextProvider>
       <Header
         setIsBarsClicked={setIsBarsClicked}
         isBarsClicked={isBarsClicked}
@@ -19,7 +19,7 @@ function App() {
         setActiveLink={setActiveLink}
       />
       <Home isBarsClicked={isBarsClicked} />
-    </ThemeContextProvider>
+    </AppContextProvider>
   );
 }
 

@@ -2,37 +2,23 @@ import React, { useContext } from "react";
 import styles from "./sidebar.module.css";
 import classNames from "classnames";
 
-import { ThemeContext } from "../../contexts/ThemeContextProvider";
-import {
-  firstSection,
-  secondSection,
-  thirdSection,
-  fourthSection,
-  fifthSection,
-  sixthSection,
-  firstQuickLinks,
-  secondQuickLinks,
-  smallSidebarItems,
-} from "../../data/sidebarLinks";
-
-const Button = ({ icon, title, activeLink }) => {
-  const { currentTheme } = useContext(ThemeContext);
-  return (
-    <button
-      className={classNames(
-        styles.btn,
-        currentTheme === "dark" && styles.dark,
-        activeLink === title && styles.active
-      )}
-    >
-      {" "}
-      <img src={icon} alt={title} /> <span>{title}</span>
-    </button>
-  );
-};
+import { AppContext } from "../../contexts/AppContextProvider";
+import SidebarButton from "../sidebarButton/sidebarButton";
 
 const Sidebar = ({ isBarsClicked, activeLink, setActiveLink }) => {
-  const { currentTheme } = useContext(ThemeContext);
+  const { currentTheme, sidebarLinksToDraw } = useContext(AppContext);
+
+  const {
+    firstSection,
+    secondSection,
+    thirdSection,
+    fourthSection,
+    fifthSection,
+    sixthSection,
+    firstQuickLinks,
+    secondQuickLinks,
+    smallSidebarItems,
+  } = sidebarLinksToDraw;
 
   return (
     <>
@@ -45,7 +31,7 @@ const Sidebar = ({ isBarsClicked, activeLink, setActiveLink }) => {
         >
           <div className={classNames(styles.section, styles.whiteIcon)}>
             {firstSection.map((item, index) => (
-              <Button
+              <SidebarButton
                 key={index}
                 icon={item.icon}
                 title={item.title}
@@ -56,43 +42,43 @@ const Sidebar = ({ isBarsClicked, activeLink, setActiveLink }) => {
           </div>
           <div className={classNames(styles.section, styles.whiteIcon)}>
             {secondSection.map((item, index) => (
-              <Button key={index} icon={item.icon} title={item.title} />
+              <SidebarButton key={index} icon={item.icon} title={item.title} />
             ))}
           </div>
           <div className={classNames(styles.section, styles.subscriptions)}>
             <h3>subscriptions</h3>
             {thirdSection.map((item, index) => (
-              <Button key={index} icon={item.icon} title={item.title} />
+              <SidebarButton key={index} icon={item.icon} title={item.title} />
             ))}
           </div>
           <div className={classNames(styles.section, styles.whiteIcon)}>
             <h3>explore</h3>
             {fourthSection.map((item, index) => (
-              <Button key={index} icon={item.icon} title={item.title} />
+              <SidebarButton key={index} icon={item.icon} title={item.title} />
             ))}
           </div>
           <div className={styles.section}>
             <h3>more from youtube</h3>
             {fifthSection.map((item, index) => (
-              <Button key={index} icon={item.icon} title={item.title} />
+              <SidebarButton key={index} icon={item.icon} title={item.title} />
             ))}
           </div>
           <div className={classNames(styles.section, styles.whiteIcon)}>
             {sixthSection.map((item, index) => (
-              <Button key={index} icon={item.icon} title={item.title} />
+              <SidebarButton key={index} icon={item.icon} title={item.title} />
             ))}
           </div>
           <div className={classNames(styles.section, styles.bottomLinks)}>
             <div className={styles.first}>
               {firstQuickLinks.map((item, index) => (
-                <a key={index} href="#">
+                <a key={index} href="/">
                   {item}
                 </a>
               ))}
             </div>
             <div className={styles.second}>
               {secondQuickLinks.map((item, index) => (
-                <a key={index} href="#">
+                <a key={index} href="/">
                   {item}
                 </a>
               ))}

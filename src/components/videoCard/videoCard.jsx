@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import styles from "./videoCard.module.css";
 import classNames from "classnames";
-import { ThemeContext } from "../../contexts/ThemeContextProvider";
+import { AppContext } from "../../contexts/AppContextProvider";
 
 const VideoCard = ({
   title,
@@ -12,7 +12,7 @@ const VideoCard = ({
   uploadedBefore,
   duration,
 }) => {
-  const { currentTheme } = useContext(ThemeContext);
+  const { currentTheme } = useContext(AppContext);
   return (
     <div
       className={classNames(

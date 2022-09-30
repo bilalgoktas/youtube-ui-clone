@@ -1,8 +1,7 @@
 import classNames from "classnames";
 import React, { useContext } from "react";
-import { ThemeContext } from "../../contexts/ThemeContextProvider";
-import countries from "../../data/countries";
-import icons from "../../icons";
+import { AppContext } from "../../contexts/AppContextProvider";
+import icons from "../../data/icons";
 import styles from "./countries.module.css";
 
 const Countries = ({
@@ -11,7 +10,7 @@ const Countries = ({
   setLocation,
   location,
 }) => {
-  const { currentTheme } = useContext(ThemeContext);
+  const { currentTheme, countriesToDraw } = useContext(AppContext);
   return (
     <div
       className={classNames(
@@ -27,13 +26,13 @@ const Countries = ({
             setCountriesOpen(false);
           }}
         >
-          <img src={icons.backArrow} />
+          <img src={icons.backArrow} alt="back" />
         </button>
         <span>Choose your location</span>
       </div>
 
       <div className={styles.listContainer}>
-        {countries.map((country, index) => (
+        {countriesToDraw.map((country, index) => (
           <button
             key={index}
             onClick={() => {
@@ -48,6 +47,7 @@ const Countries = ({
                 country.name === location.name && styles.checked
               )}
               src={icons.check}
+              alt="selected country"
             />
             <span>{country.name}</span>
           </button>
