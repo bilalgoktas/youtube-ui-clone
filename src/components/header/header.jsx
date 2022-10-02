@@ -6,14 +6,31 @@ import Drawer from "../drawer/drawer";
 import Countries from "../countries/countries";
 import ThemeToggler from "../themeToggler/themeToggler";
 import { AppContext } from "../../contexts/AppContextProvider";
+import { DrawerContext } from "../../contexts/DrawerContextProvider";
+import BackDrop from "../backDrop/backDrop";
 
 const Header = ({ setIsBarsClicked, isBarsClicked }) => {
   const { currentTheme } = useContext(AppContext);
+  const {
+    isDrawerOpen,
+    isCountriesOpen,
+    isThemeTogglerOpen,
+    setIsDrawerOpen,
+    setIsCountriesOpen,
+    setIsThemeTogglerOpen,
+  } = useContext(DrawerContext);
+
   const [isFocused, setIsFocused] = useState(false);
-  const [drawerOpen, setDrawerOpen] = useState(false);
-  const [countriesOpen, setCountriesOpen] = useState(false);
   const [location, setLocation] = useState({ name: "Netherlands", code: "NL" });
-  const [themeTogglerOpen, setThemeTogglerOpen] = useState(false);
+
+  const handleDrawer = () => {
+    isCountriesOpen | isThemeTogglerOpen | isDrawerOpen
+      ? setIsDrawerOpen(false)
+      : setIsDrawerOpen(true);
+
+    setIsCountriesOpen(false);
+    setIsThemeTogglerOpen(false);
+  };
 
   return (
     <div
@@ -94,17 +111,7 @@ const Header = ({ setIsBarsClicked, isBarsClicked }) => {
             alt="notifications"
           />
         </button>
-        <button
-          className={styles.photo}
-          onClick={() => {
-            countriesOpen | themeTogglerOpen | drawerOpen
-              ? setDrawerOpen(false)
-              : setDrawerOpen(true);
-
-            setCountriesOpen(false);
-            setThemeTogglerOpen(false);
-          }}
-        >
+        <button className={styles.photo} onClick={handleDrawer}>
           <img
             className={styles.profilePhoto}
             src={icons.profilePhoto}
@@ -112,28 +119,15 @@ const Header = ({ setIsBarsClicked, isBarsClicked }) => {
           />
         </button>
       </div>
-      {drawerOpen && (
-        <Drawer
-          setDrawerOpen={setDrawerOpen}
-          setCountriesOpen={setCountriesOpen}
-          setThemeTogglerOpen={setThemeTogglerOpen}
-          location={location}
-        />
+
+      {isDrawerOpen && <Drawer location={location} />}
+      {isCountriesOpen && (
+        <Countries setLocation={setLocation} location={location} />
       )}
-      {countriesOpen && (
-        <Countries
-          setDrawerOpen={setDrawerOpen}
-          setCountriesOpen={setCountriesOpen}
-          setLocation={setLocation}
-          location={location}
-        />
-      )}
-      {themeTogglerOpen && (
-        <ThemeToggler
-          setDrawerOpen={setDrawerOpen}
-          setThemeTogglerOpen={setThemeTogglerOpen}
-        />
-      )}
+      {isThemeTogglerOpen && <ThemeToggler />}
+      {isDrawerOpen | isCountriesOpen | isThemeTogglerOpen ? (
+        <BackDrop handleDrawer={handleDrawer} />
+      ) : null}
     </div>
   );
 };

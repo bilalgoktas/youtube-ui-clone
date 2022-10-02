@@ -1,16 +1,15 @@
 import classNames from "classnames";
 import React, { useContext } from "react";
 import { AppContext } from "../../contexts/AppContextProvider";
+import { DrawerContext } from "../../contexts/DrawerContextProvider";
 import icons from "../../data/icons";
 import styles from "./drawer.module.css";
 
-const Drawer = ({
-  setDrawerOpen,
-  setCountriesOpen,
-  setThemeTogglerOpen,
-  location,
-}) => {
+const Drawer = ({ location }) => {
   const { currentTheme } = useContext(AppContext);
+  const { setIsDrawerOpen, setIsCountriesOpen, setIsThemeTogglerOpen } =
+    useContext(DrawerContext);
+
   const firstSection = [
     { icon: icons.yourChannel, title: "Your channel" },
     { icon: icons.youtubeStudio, title: "YouTube Studio" },
@@ -30,8 +29,8 @@ const Drawer = ({
         currentTheme.charAt(0).toUpperCase() + currentTheme.slice(1)
       }`,
       onClick: () => {
-        setThemeTogglerOpen(true);
-        setDrawerOpen(false);
+        setIsThemeTogglerOpen(true);
+        setIsDrawerOpen(false);
       },
     },
     { icon: icons.language, title: "Language: English", onClick: () => {} },
@@ -44,8 +43,8 @@ const Drawer = ({
       icon: icons.globe,
       title: `Location: ${location.name}`,
       onClick: () => {
-        setCountriesOpen(true);
-        setDrawerOpen(false);
+        setIsCountriesOpen(true);
+        setIsDrawerOpen(false);
       },
     },
     { icon: icons.keyboard, title: "Keyboard shortcuts", onClick: () => {} },

@@ -1,16 +1,13 @@
 import classNames from "classnames";
 import React, { useContext } from "react";
 import { AppContext } from "../../contexts/AppContextProvider";
+import { DrawerContext } from "../../contexts/DrawerContextProvider";
 import icons from "../../data/icons";
 import styles from "./countries.module.css";
 
-const Countries = ({
-  setDrawerOpen,
-  setCountriesOpen,
-  setLocation,
-  location,
-}) => {
+const Countries = ({ setLocation, location }) => {
   const { currentTheme, countriesToDraw } = useContext(AppContext);
+  const { setIsDrawerOpen, setIsCountriesOpen } = useContext(DrawerContext);
   return (
     <div
       className={classNames(
@@ -22,8 +19,8 @@ const Countries = ({
         <button
           className={styles.backButton}
           onClick={() => {
-            setDrawerOpen(true);
-            setCountriesOpen(false);
+            setIsDrawerOpen(true);
+            setIsCountriesOpen(false);
           }}
         >
           <img src={icons.backArrow} alt="back" />
@@ -37,8 +34,8 @@ const Countries = ({
             key={index}
             onClick={() => {
               setLocation(country);
-              setDrawerOpen(false);
-              setCountriesOpen(false);
+              setIsDrawerOpen(false);
+              setIsCountriesOpen(false);
             }}
           >
             <img

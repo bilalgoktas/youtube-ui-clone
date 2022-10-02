@@ -3,9 +3,11 @@ import icons from "../../data/icons";
 import styles from "./themeToggler.module.css";
 import classNames from "classnames";
 import { AppContext } from "../../contexts/AppContextProvider";
+import { DrawerContext } from "../../contexts/DrawerContextProvider";
 
-const ThemeToggler = ({ setThemeTogglerOpen, setDrawerOpen }) => {
+const ThemeToggler = () => {
   const { currentTheme, setCurrentTheme } = useContext(AppContext);
+  const { setIsThemeTogglerOpen, setIsDrawerOpen } = useContext(DrawerContext);
 
   return (
     <div
@@ -18,8 +20,8 @@ const ThemeToggler = ({ setThemeTogglerOpen, setDrawerOpen }) => {
         <button
           className={styles.backButton}
           onClick={() => {
-            setDrawerOpen(true);
-            setThemeTogglerOpen(false);
+            setIsDrawerOpen(true);
+            setIsThemeTogglerOpen(false);
           }}
         >
           <img src={icons.backArrow} alt="back" />
@@ -38,8 +40,8 @@ const ThemeToggler = ({ setThemeTogglerOpen, setDrawerOpen }) => {
         </button>
         <button
           onClick={() => {
-            setDrawerOpen(false);
-            setThemeTogglerOpen(false);
+            setIsDrawerOpen(false);
+            setIsThemeTogglerOpen(false);
             setCurrentTheme("dark");
           }}
         >
@@ -56,8 +58,8 @@ const ThemeToggler = ({ setThemeTogglerOpen, setDrawerOpen }) => {
         <button
           onClick={() => {
             setCurrentTheme("light");
-            setDrawerOpen(false);
-            setThemeTogglerOpen(false);
+            setIsDrawerOpen(false);
+            setIsThemeTogglerOpen(false);
           }}
         >
           <img
